@@ -1,0 +1,9 @@
+User-Agent: *
+Disallow: /?pid
+Disallow: /?fp
+Disallow: /login
+Disallow: /thank-you
+Disallow: /landing 
+Disallow: /fyp
+Disallow: /public/
+Sitemap: https://www.ksquareenergy.com/sitemap.xml

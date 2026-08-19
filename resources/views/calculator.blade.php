@@ -1,0 +1,434 @@
+@include('header')
+<link rel="stylesheet" href="public/css/calculator.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Asap:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</header>
+<div id="mainContent">
+    <div class="hero">
+        <div class="hero-overlay">
+            <h1>SOLAR CALCULATOR</h1>
+            <div class="calculator-bar">
+                <select id="state" class="form-select">
+                    <option value="">Select State</option>
+                </select>
+                <select id="bill">
+                    <option value="">Select Bill Range</option>
+                    <option value="2000-3000">₹2000 - ₹3000</option>
+                    <option value="3000-4000">₹3000 - ₹4000</option>
+                    <option value="4000-6000">₹4000 - ₹6000</option>
+                    <option value="6000-7000">₹6000 - ₹7000</option>
+                    <option value="7000-8000">₹7000 - ₹8000</option>
+                    <option value="8000-9000">₹8000 - ₹9000</option>
+                    <option value="9000-10000">₹9000 - ₹10000</option>
+                    <option value="10000-11000">₹10000 - ₹11000</option>
+                    <option value="11000-12000">₹11000 - ₹12000</option>
+                    <option value="12000-13000">₹12000 - ₹13000</option>
+                    <option value="12000-15000">₹12000 - ₹15000</option>
+                    <option value="15000-17000">₹15000 - ₹17000</option>
+                    <option value="17000-20000">₹17000 - ₹20000</option>
+                </select>
+                <select id="consumerType">
+                    <option value="">Select Type</option>
+                    <option value="Residential">Residential</option>
+                </select>
+            </div>
+            <div class="calcul">
+                <button onclick="calculate()">Calculate</button>
+            </div>
+            <div id="loading" class="loading" style="display: none;">Calculating your Solar Savings... ☀️</div>
+        </div>
+    </div>
+    <div id="result" class="result-section"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tabContents = document.querySelectorAll('.custom-tab-content');
+            tabContents.forEach(content => content.style.display = 'none');
+            const firstTabContent = document.getElementById('custom-content-1');
+            firstTabContent.style.display = 'block';
+            const tabButtons = document.querySelectorAll('input[name="custom-tab-btn"]');
+            tabButtons.forEach((button, index) => {
+                button.addEventListener('change', function() {
+                    tabContents.forEach(content => content.style.display = 'none');
+                    const selectedTabContent = document.getElementById('custom-content-' + (index + 1));
+                    selectedTabContent.style.display = 'block';
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item').forEach(function(navItem) {
+            navItem.addEventListener('click', function () {
+                const navbarCollapse = document.getElementById('navbarNav');
+                const isNavbarShown = navbarCollapse.classList.contains('show');
+                if (isNavbarShown) {
+                    new bootstrap.Collapse(navbarCollapse).toggle();
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const saved = localStorage.getItem("globalResult");
+            if (saved) {
+                window.globalResult = JSON.parse(saved);
+            }
+        });
+
+        const tariffs = {
+            "Andhra Pradesh": 10.0, "Arunachal Pradesh": 4.4, "Assam": 8.0, "Bihar": 8.5,
+            "Chhattisgarh": 8.0, "Goa": 7.5, "Gujarat": 7.5, "Haryana": 8.0,
+            "Himachal Pradesh": 5.0, "Jharkhand": 8.0, "Karnataka": 6.5, "Kerala": 7.0,
+            "Madhya Pradesh": 8.0, "Maharashtra": 8.0, "Manipur": 7.0, "Meghalaya": 7.5,
+            "Mizoram": 6.0, "Nagaland": 6.0, "Odisha": 7.5, "Punjab": 8.0,
+            "Rajasthan": 7.8, "Sikkim": 6.0, "Tamil Nadu": 7.5, "Telangana": 8.0,
+            "Tripura": 6.0, "Uttar Pradesh": 8.0, "Uttarakhand": 7.0, "West Bengal": 8.5,
+            "Delhi": 7.5, "Puducherry": 7.5
+        };
+
+        const billMapping = {
+            "2000-3000": { capacity: 2.18, panels: 4, subsidy: 62880 },
+            "3000-4000": { capacity: 2.73, panels: 5, subsidy: 72600 },
+            "4000-6000": { capacity: 3.27, panels: 6, subsidy: 78000 },
+            "6000-7000": { capacity: 3.82, panels: 7, subsidy: 78000 },
+            "7000-8000": { capacity: 4.36, panels: 8, subsidy: 78000 },
+            "8000-9000": { capacity: 4.86, panels: 9, subsidy: 78000 },
+            "9000-10000": { capacity: 5.45, panels: 10, subsidy: 78000 },
+            "10000-11000": { capacity: 6.00, panels: 11, subsidy: 78000 },
+            "11000-12000": { capacity: 6.54, panels: 12, subsidy: 78000 },
+            "12000-13000": { capacity: 7.14, panels: 13, subsidy: 78000 },
+            "12000-15000": { capacity: 8.18, panels: 15, subsidy: 78000 },
+            "15000-17000": { capacity: 8.72, panels: 16, subsidy: 78000 },
+            "17000-20000": { capacity: 9.81, panels: 18, subsidy: 78000 }
+        };
+
+        const stateSelect = document.getElementById('state');
+        for (let state in tariffs) {
+            let option = document.createElement('option');
+            option.value = state;
+            option.text = state;
+            stateSelect.appendChild(option);
+        }
+
+        function animateCounter(element, start, end, duration = 1500) {
+            let startTimestamp = null;
+            const prefix = element.dataset.prefix || "";
+            const suffix = element.dataset.suffix ? " " + element.dataset.suffix : "";
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = start + (end - start) * progress;
+                const formattedValue = value % 1 === 0 ? value.toFixed(0) : value.toFixed(2);
+                element.innerHTML = `${prefix}${Number(formattedValue).toLocaleString()}${suffix}`;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        function calculate() {
+            const state = document.getElementById('state').value;
+            const billRange = document.getElementById('bill').value;
+            const loading = document.getElementById('loading');
+            const result = document.getElementById('result');
+            if (!state || !billRange) {
+                alert("Please select both State and Bill Range!");
+                return;
+            }
+            result.innerHTML = "";
+            loading.style.display = "block";
+            setTimeout(() => {
+                loading.style.display = "none";
+                const billData = billMapping[billRange];
+                if (!billData) {
+                    alert("No data found for selected range!");
+                    return;
+                }
+                let projectCapacity = billData.capacity;
+                let numberOfPanels = billData.panels;
+                let subsidy = billData.subsidy;
+                const priceData = {
+                    "Gujarat": {
+                        "Adani/Waaree": {
+                            "2000-3000": 129000, "3000-4000": 153000, "4000-6000": 175000, "6000-7000": 205000,
+                            "7000-8000": 226000, "8000-9000": 259000, "9000-10000": 281000, "10000-11000": 304000,
+                            "11000-12000": 369000, "12000-13000": 417000, "13000-15000": 440000, "15000-17000": 462000, "17000-20000": 509000
+                        },
+                        "K-square/APS": {
+                            "2000-3000": 123000, "3000-4000": 143000, "4000-6000": 165000, "6000-7000": 193000,
+                            "7000-8000": 218000, "8000-9000": 245000, "9000-10000": 270000, "10000-11000": 286000,
+                            "11000-12000": 349000, "12000-13000": 394000, "13000-15000": 415000, "15000-17000": 460000, "17000-20000": 479000
+                        },
+                        "Goldi/Rayzon": {
+                            "2000-3000": 126000, "3000-4000": 147000, "4000-6000": 169000, "6000-7000": 198000,
+                            "7000-8000": 220000, "8000-9000": 251000, "9000-10000": 270000, "10000-11000": 293000,
+                            "11000-12000": 357000, "12000-13000": 398000, "13000-15000": 425000, "15000-17000": 460000, "17000-20000": 491000
+                        },
+                        "Adani (565Wp to 570Wp)": {
+                            "2000-3000": 134000, "3000-4000": 160000, "4000-6000": 183000, "6000-7000": 241000,
+                            "7000-8000": 243000, "8000-9000": 270000, "9000-10000": 294000, "10000-11000": 370000,
+                            "11000-12000": 413000, "12000-13000": 457000, "13000-15000": 467000, "15000-17000": 488000, "17000-20000": 521000
+                        }
+                    },
+                    "Other": {
+                        "Adani/Waaree": {
+                            "2000-3000": 145868, "3000-4000": 170093, "4000-6000": 192897, "6000-7000": 224297,
+                            "7000-8000": 244108, "8000-9000": 279468, "9000-10000": 279468, "10000-11000": 349731,
+                            "11000-12000": 349731, "12000-13000": 449000, "13000-15000": 470326, "15000-17000": 541049, "17000-20000": 541048
+                        },
+                        "K-square/APS": {
+                            "2000-3000": 140162, "3000-4000": 163861, "4000-6000": 184838, "6000-7000": 214311,
+                            "7000-8000": 232970, "8000-9000": 266629, "9000-10000": 266629, "10000-11000": 334040,
+                            "11000-12000": 334040, "12000-13000": 448000, "13000-15000": 448829, "15000-17000": 515372, "17000-20000": 515372
+                        }
+                    }
+                };
+                const isGujarat = state === "Gujarat";
+                const region = isGujarat ? "Gujarat" : "Other";
+                const kSquareCost = priceData[region]["K-square/APS"][billRange];
+                const adaniCost = priceData[region]["Adani/Waaree"][billRange];
+                const goldiCost = isGujarat ? priceData[region]["Goldi/Rayzon"][billRange] : null;
+                const adaniHighWpCost = isGujarat ? priceData[region]["Adani (565Wp to 570Wp)"][billRange] : null;
+                let totalProjectCost = kSquareCost;
+                if (subsidy > totalProjectCost) subsidy = totalProjectCost;
+                let landedCost = totalProjectCost - subsidy;
+                let avgDailyGen = projectCapacity * 4.5;
+                let avgYearlyGen = avgDailyGen * 365;
+                let unitCostGrid = tariffs[state];
+                let yearlySaving = avgYearlyGen * unitCostGrid;
+                let roi = landedCost / yearlySaving;
+                let co2Saving = avgYearlyGen * 0.8;
+                let saving25years = yearlySaving * 25;
+                let treesPlanted = co2Saving / 21.77;
+                let systemLifespan = 25;
+                let areaPerPanel = 28;
+                let totalArea = areaPerPanel * numberOfPanels;
+                window.globalResult = {
+                    systemCapacity: projectCapacity, numberOfPanels: numberOfPanels, totalProjectCost: totalProjectCost,
+                    subsidy: subsidy, landedCost: landedCost, avgDailyGen: avgDailyGen, avgYearlyGen: avgYearlyGen,
+                    annualSavings: yearlySaving, roiPeriod: roi, co2Savings: co2Saving, saving25years: saving25years,
+                    treesPlanted: treesPlanted, systemLifespan: systemLifespan, totalArea: totalArea,
+                    adaniCost: adaniCost, kSquareCost: kSquareCost, goldiCost: goldiCost, adaniHighWpCost: adaniHighWpCost
+                };
+                localStorage.setItem("globalResult", JSON.stringify(window.globalResult));
+                result.innerHTML = `
+                    <div class="result-card">
+                        <h3 class="head">Your Solar Calculations 🌞</h3>
+                        <div class="result-grid">
+                            ${createMiniCard("Capacity", projectCapacity.toFixed(2), "kW")}
+                            ${createMiniCard("Number of Panels", numberOfPanels)}
+                            ${createMiniCard("Total Project Cost", totalProjectCost, "currency")}
+                            ${createMiniCard("Government Subsidy", subsidy, "currency")}
+                            ${createMiniCard("Landed Project Cost", landedCost, "currency")}
+                            ${createMiniCard("Average Daily Generation", avgDailyGen.toFixed(2), "kWh/day")}
+                            ${createMiniCard("Average Yearly Generation", avgYearlyGen.toFixed(0), "kWh")}
+                            ${createMiniCard("Yearly Savings", yearlySaving, "currency")}
+                            ${createMiniCard("Return on Investment", roi.toFixed(1), "years")}
+                            ${createMiniCard("CO₂ Savings per Year", co2Saving.toFixed(0), "kg")}
+                            ${createMiniCard("Total Savings in 25 Years", saving25years, "currency")}
+                            ${createMiniCard("Equivalent Trees Planted", treesPlanted.toFixed(0))}
+                            ${createMiniCard("System Life Span", systemLifespan)}
+                            ${createMiniCard("Total Roof Area Needed", totalArea, "sq ft")}
+                        </div>
+                        <div class="comparison-box">
+                            <h4>Other Companies Cost Comparison 💰</h4>
+                            <ul>
+                                <li><strong>Adani/Waaree:</strong> ₹${adaniCost ? adaniCost.toLocaleString() : 'N/A'}</li>
+                                <li><strong>K-square/APS:</strong> ₹${kSquareCost ? kSquareCost.toLocaleString() : 'N/A'}</li>
+                                ${goldiCost ? `<li><strong>Goldi/Rayzon:</strong> ₹${goldiCost.toLocaleString()}</li>` : ''}
+                                ${adaniHighWpCost ? `<li><strong>Adani (565Wp to 570Wp):</strong> ₹${adaniHighWpCost.toLocaleString()}</li>` : ''}
+                            </ul>
+                        </div>
+                        <div id="pdfLoader" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(255,255,255,0.8); z-index:9999; text-align:center; padding-top:200px; font-size:24px; font-weight:bold;">Generating PDF... Please wait ⏳</div>
+                        <div class="user-inputs">
+                            <h4>Download your full Quotation here</h4>
+                            <input type="text" id="name" placeholder="Name" required><br>
+                            <input type="text" id="phone" placeholder="Phone" required><br>
+                            <input type="email" id="email" placeholder="Email" required><br>
+                            <input type="text" id="pincode" maxlength="6" placeholder="Pincode" required><br>
+                            <button class="download-pdf-btn" onclick="downloadPDF()">Download PDF</button>
+                        </div>
+                    </div>
+                `;
+                const counters = document.querySelectorAll('.count-num');
+                counters.forEach(counter => {
+                    const endVal = parseFloat(counter.dataset.value);
+                    animateCounter(counter, 0, endVal, 1500);
+                });
+                result.scrollIntoView({ behavior: 'smooth' });
+            }, 2000);
+        }
+
+        function createMiniCard(label, value, unit = "") {
+            let prefix = "";
+            let suffix = "";
+            let icon = "";
+            let iconClass = "";
+            switch (label) {
+                case "Capacity": icon = "https://img.icons8.com/fluency/48/solar-panel.png"; iconClass = "capacity"; break;
+                case "Number of Panels": icon = "https://img.icons8.com/color/48/grid.png"; iconClass = "panels"; break;
+                case "Total Project Cost": icon = "https://img.icons8.com/color/48/money--v1.png"; iconClass = "cost"; break;
+                case "Government Subsidy": icon = "https://img.icons8.com/color/48/receive-cash.png"; iconClass = "subsidy"; break;
+                case "Landed Project Cost": icon = "https://img.icons8.com/color/48/price-tag.png"; iconClass = "cost"; break;
+                case "Average Daily Generation": icon = "https://img.icons8.com/fluency/48/light.png"; iconClass = "generation"; break;
+                case "Average Yearly Generation": icon = "https://img.icons8.com/color/48/sun.png"; iconClass = "generation"; break;
+                case "Yearly Savings": icon = "https://img.icons8.com/fluency/48/money-bag.png"; iconClass = "savings"; break;
+                case "Return on Investment": icon = "https://img.icons8.com/color/48/graph.png"; iconClass = "roi"; break;
+                case "CO₂ Savings per Year": icon = "https://img.icons8.com/ios/50/co2.png"; iconClass = "co2"; break;
+                case "Total Savings in 25 Years": icon = "https://img.icons8.com/fluency/48/safe--v1.png"; iconClass = "savings"; break;
+                case "Equivalent Trees Planted": icon = "https://img.icons8.com/color/48/deciduous-tree.png"; iconClass = "trees"; break;
+                case "System Life Span": icon = "https://img.icons8.com/ios/50/stopwatch.png"; iconClass = "clock"; break;
+                case "Total Roof Area Needed": icon = "https://img.icons8.com/color/48/ruler--v1.png"; iconClass = "area"; break;
+                default: icon = "https://img.icons8.com/ios/50/settings--v1.png"; iconClass = "default"; break;
+            }
+            if (unit === "currency") {
+                prefix = "₹";
+            } else if (unit) {
+                suffix = unit;
+            }
+            return `
+                <div class="mini-card">
+                    <h4>
+                        <div class="icon-container ${iconClass}">
+                            <img src="${icon}" alt="${label}" class="${iconClass}" />
+                        </div>
+                        ${label}
+                    </h4>
+                    <p class="count-num" data-value="${value}" data-prefix="${prefix}" data-suffix="${suffix}"></p>
+                </div>
+            `;
+        }
+
+        function downloadPDF() {
+            const name = document.getElementById("name").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const pincode = document.getElementById("pincode").value.trim();
+            if (!name || !phone || !email || !pincode) {
+                alert("Please fill all fields.");
+                return;
+            }
+            if (!window.globalResult || !window.globalResult.systemCapacity) {
+                alert("Calculation incomplete. Please try again.");
+                return;
+            }
+            document.getElementById("pdfLoader").style.display = "block";
+            const formData = {
+                name, phone, email, pincode,
+                capacity: window.globalResult.systemCapacity,
+                yearly_savings: window.globalResult.annualSavings,
+                roi: window.globalResult.roiPeriod,
+                savings_25yrs: window.globalResult.saving25years,
+                daily_generation: window.globalResult.avgDailyGen,
+                yearly_generation: window.globalResult.avgYearlyGen,
+                co2_saving: window.globalResult.co2Savings,
+                tree_equivalent: window.globalResult.treesPlanted,
+                panels: window.globalResult.numberOfPanels,
+                subsidy: window.globalResult.subsidy,
+                total_cost: window.globalResult.totalProjectCost,
+                datetime: new Date().toLocaleString('en-IN', {
+                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+                    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
+                })
+            };
+            fetch('/api/generate-quotation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || ''
+                }
+            })
+            .then(res => {
+                if (!res.ok) throw new Error(`Server responded with status: ${res.status}`);
+                return res.text();
+            })
+            .then(text => {
+                const trimmedText = text.trim();
+                if (!trimmedText) throw new Error("Empty response received from quotation generator.");
+                let data;
+                try {
+                    // Extract JSON from response (handles extra HTML after JSON)
+                    const jsonMatch = trimmedText.match(/^\{[\s\S]*?\}(?=\s*<|$)/);
+                    const jsonString = jsonMatch ? jsonMatch[0] : trimmedText;
+                    data = JSON.parse(jsonString);
+                } catch (e) {
+                    console.error("JSON Parsing Error on Quotation API:", e, "Raw Text:", trimmedText);
+                    throw new Error(`Invalid JSON response: ${e.message}`);
+                }
+                if (data.quotation_no) {
+                    formData.quotation_no = data.quotation_no;
+                    return fetch('/api/save-form', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || ''
+                        },
+                        body: JSON.stringify(formData)
+                    });
+                } else {
+                    throw new Error("No quotation number received");
+                }
+            })
+            .then(res => {
+                if (!res.ok) throw new Error(`Server responded with status: ${res.status}`);
+                return res.text();
+            })
+            .then(text => {
+                const trimmedText = text.trim();
+                if (!trimmedText) throw new Error("Empty response from save-form");
+                let data;
+                try {
+                    // Extract JSON from response (handles extra HTML after JSON)
+                    const jsonMatch = trimmedText.match(/^\{[\s\S]*?\}(?=\s*<|$)/);
+                    const jsonString = jsonMatch ? jsonMatch[0] : trimmedText;
+                    data = JSON.parse(jsonString);
+                } catch (e) {
+                    console.error("JSON Parsing Error on Save Form API:", e, "Raw Text:", trimmedText);
+                    throw new Error(`Invalid JSON response: ${e.message}`);
+                }
+                return data;
+            })
+            .then(data => {
+                document.getElementById("pdfLoader").style.display = "none";
+                if (data.status === 'success') {
+                    window.open('/generate-pdf/' + formData.quotation_no, '_blank');
+                } else {
+                    alert("There was an error generating the PDF.");
+                }
+            })
+            .catch(err => {
+                document.getElementById("pdfLoader").style.display = "none";
+                console.error("Error:", err);
+                alert("Something went wrong. Please try again later. Check console for error details.");
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.addEventListener("submit", function (e) {
+                if (e.target && e.target.id === "userDetailsForm") {
+                    e.preventDefault();
+                    const name = document.getElementById("name").value.trim();
+                    const phone = document.getElementById("phone").value.trim();
+                    const email = document.getElementById("email").value.trim();
+                    const pincode = document.getElementById("pincode").value.trim();
+                    if (!name || !phone || !email || !pincode) {
+                        alert("Please fill in all the details.");
+                        return;
+                    }
+                    localStorage.setItem("userDetails", JSON.stringify({ name, phone, email, pincode }));
+                    document.getElementById("downloadBtn").disabled = false;
+                    fetch("save_form.php", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ name, phone, email })
+                    }).then(res => {
+                        if (!res.ok) alert("Failed to save user details.");
+                    });
+                }
+            });
+        });
+    </script>
+@include('footer')

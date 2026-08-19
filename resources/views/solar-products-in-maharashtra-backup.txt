@@ -1,0 +1,165 @@
+@include('header')
+            <div class="maharashtra-banner  cspt-bg-color-transparent cspt-bg-image-yes">
+                <div class="container">
+                    <div class="cspt-title-bar-content">
+
+                        <div class="cspt-title-bar-content-inner">
+                            <div class="cspt-tbar">
+                                <div class="cspt-tbar-inner container">
+                                    <!-- <h1 class="cspt-tbar-title"> Profile</h1> -->
+                                </div>
+                            </div>
+                            <div class="cspt-breadcrumb">
+                                <!-- <div class="cspt-breadcrumb-inner"><span><a title=""
+                                            href=""
+                                            class="home"><span>About Us</span></a></span><i
+                                        class="cspt-base-icon-angle-right"></i><span
+                                        class="post post-page current-item">Profile</span></div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="maharashtra pt-5">
+                <div class="container">
+                    <h1 class="text-center">Best Solar Products In Maharashtra </h1>
+                    <p class="text-center pb-4">Ksquare is a leading B2B solar products manufacturing company in Maharashtra which offers a wide range of solar products at best rates. We have a wide range of high performance solar products for all use may be it residential, commercial or industrial.</p>
+                    
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mg_ad">
+                            <img src="public/images/Solar Inverters.jpg" />
+                        </div>
+                        <div class="col-md-6 mg_ad">
+                            <h2>Solar Inverters </h2>
+                            <p class="pb-4">Solar inverter is a crucial part of any solar system as it converts DC electricity produced by solar panels into AC electricity which is used to power appliances, devices and electrical systems for homes and businesses. Ksquare is a leading manufacturer and supplier of solar inverters in Maharashtra. Ksquare inverters ranges from 1.3 kW to 25 kW and available in single phase and three phase. Ksquare inverters are highly efficient, durable and compatible with most of the solar panels.  Ksquare inverters not only provide reliable power during grid outage but also help in reducing electricity bills by optimizing the use of solar energy. With advanced technology like No epoxy colloid, full protection from surge, reverse polarity, over temperature and leakages Ksquare Solar Inverters are the go to choice for any kind of solar system for Maharashtra region.</p>
+                          <a href="#" class="cc_btn">Contact US </a>
+                          <a href="#" class="view_b">View more </a>
+                        </div>
+                        
+                        <div class="col-md-6 mg_ad">
+                            <h2>LT Panels (Low Tension Panels) </h2>
+                            <p class="pb-4">Ksquare is the leading manufacturer and supplier of LT panels in Maharashtra. We specialize in custom manufacturing of LT panels as per the requirement of the project. We also deliver LT panels upto MW scale of solar projects depending on the needs and requirement. We use premium grade of materials and components in our manufacturing process combined with the state of art technology to guarantee durability and reliability of the project. If you require Solar LT panels submit your queries and we will ensure timely delivery of solar LT panels for your project.</p>
+                          <a href="#" class="cc_btn">Contact US </a>
+                          <a href="#" class="view_b">View more </a>
+                        </div>
+                        <div class="col-md-6 mg_ad">
+                            <img src="public/images/LT Panels.jpg" />
+                        </div>
+                        
+                        <div class="col-md-6 mg_ad">
+                            <img src="public/images/Wire-Manufacturer.jpg" />
+                        </div>
+                        <div class="col-md-6 mg_ad">
+                            <h2>Solar Cable Wire Manufacturer</h2>
+                            <p class="pb-4">Ksquare is a leading supplier and manufacturer of solar cables in Maharashtra with brand name Solsquare. We manufacture all kind of cables like electric, solar and submersible cables. Solar cables are very essential for any solar project and to make it more efficient we manufacture and supply quality solar cables for all kinds of projects. From single and multi core cables to armoured/unarmoured cable we manufacture everything. Our cables are designed to endure harsh environmental conditions providing long lasting durability and efficiency. If you need personalized advice regarding solar cables and wires, please don't hesitate to contact us for a fast and prompt response tailored to your requirements.</p>
+                          <a href="#" class="cc_btn">Contact US </a>
+                          <a href="#" class="view_b">View more </a>
+                        </div>
+                        
+                        <div class="col-md-6 mg_ad">
+                            <h2>DCDB</h2>
+                            <p class="pb-4">Ksquare is a leading manufacturer and supplier of solar DC distribution boxes (DCDB) ranging from 3.5 kW to 100 kW in Maharashtra. DCDB plays a vital role in solar power systems by managing and distributing the direct current (DC) generated by solar panels. Ksquare's DCDB are designed in such a way that it protects the solar panels and inverters from electrical faults such as overcurrent, short circuits and voltage surges. It distributes DC power from solar arrays to the inverter ensuring smooth operation of solar systems. We provide complete solar DC combiner boxes featuring a 1-in-1-out configuration, specifically for use with 1 to 3.5 kW DC miniature circuit breakers (MCB) and DC surge protection devices (SPD).</p>
+                          <a href="#" class="cc_btn">Contact US </a>
+                          <a href="#" class="view_b">View more </a>
+                        </div>
+                        <div class="col-md-6 mg_ad">
+                            <img src="public/images/DCDB.jpg" />
+                        </div>
+                        
+                        <div class="col-md-6 mg_ad">
+                            <img src="public/images/ACDB.jpg" />
+                        </div>
+                        <div class="col-md-6 mg_ad">
+                            <h2>ACDB</h2>
+                            <p class="pb-4">Ksquare energy is the best supplier of ACDB in Maharashtra. Ksquare's ACDBs are built to protect solar inverters and other AC components from electrical issues such as overcurrent, short circuits, and voltage fluctuations. They ensure seamless distribution of AC power from the inverter to the load, enabling smooth and efficient operation of the entire solar power system. We manufacture solar ACDB ranging from 1-120kW as per the needs of the solar projects.</p>
+                          <a href="#" class="cc_btn">Contact US </a>
+                          <a href="#" class="view_b">View more </a>
+                        </div>
+                        
+                        <div class="col-md-6 mg_ad">
+                            <h2>Earthing Kit </h2>
+                            <p class="pb-4">Ksquare offers high-quality Earthing Kits in Maharashtra, making us a top choice due to our long-standing experience in manufacturing durable hardware materials. Our Solar Earthing Kits minimize energy loss caused by micro-inverters or junction box damage, ensuring efficient operation without wastage. Priced affordably, we recognize that construction and hardware-related projects can be costly, so we aim to pass on savings to our customers while maintaining high quality. As major Earthing Kit suppliers in Maharashtra, our products are reliable and easy to use in various settings, requiring minimal maintenance and adjustments. Trust Ksquare for all your needs, and experience the benefits of our dependable Earthing Kits.</p>
+                          <a href="#" class="cc_btn">Contact US </a>
+                          <a href="#" class="view_b">View more </a>
+                        </div>
+                        <div class="col-md-6 mg_ad">
+                            <img src="public/images/Earthing Kit.jpg" />
+                        </div>
+                    </div>
+                    
+                    <h3>Maharashtra's No. 1 Solar Products Manufacturing Company</h3>
+                    <p class="pb-3">Ksquare is a leading wholesaler and manufacturer of solar products in Maharshtra, focused entirely on the distribution products for residential, commercial or industrial solar projects. We offer a wide range of products, including Solar Inverters, ACDB, DCDB, AJB, SCB, combiner boxes, solar cables, earthing kits, and electric LT panels and more. Our products are designed to help you harness the power of the sun and reduce your carbon footprint while saving money on energy costs.</p>
+                    
+                     <h2 class="pb-3">Why Choose Ksquare for B2B Solar Products? </h2>
+                    <div class="table-responsive">
+                         <table>
+                      <tr>
+                        <td><b>Quality Solar Products </b> <br>Reliable and high-performance solar products.</td>
+                        <td><b>No need of warehouse</b> <br>We manage stock, reducing your storage needs</td>
+                      </tr>
+                      <tr>
+                        <td><b>Dedicated sales team</b> <br>A committed team ready to assist your business.</td>
+                        <td><b>Customized Solutions</b> <br>Customised products to meet your specific requirements.</td>
+                      </tr>
+                      <tr>
+                        <td><b>Expert Support</b> <br> Access to knowledgeable support at every step.</td>
+                        <td><b>7 years of industry experience</b> <br>Proven expertise in delivering solar solutions.</td>
+                      </tr>
+                    </table>
+                    </div>
+                    
+                    <h2 class="pb-3">FAQs About Solar Products </h2>
+                   <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header active">1.	What are the different types of solar products available?</button>
+                        <div class="accordion-content" style="display: block;">
+                            <p>This is the content for section 1.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">2.	What are the different types of solar inverters?</button>
+                        <div class="accordion-content">
+                            <p>This is the content for section 2.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">3.	How do I choose the right solar inverter for my system?</button>
+                        <div class="accordion-content">
+                            <p>This is the content for section 3.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                    
+
+                </div>
+            </section>
+@include('footer')
+<script>
+    document.querySelectorAll('.accordion-header').forEach(button => {
+    button.addEventListener('click', () => {
+        const accordionContent = button.nextElementSibling;
+        const isActive = accordionContent.style.display === 'block';
+
+        // Close all open accordion items
+        document.querySelectorAll('.accordion-content').forEach(content => {
+            content.style.display = 'none';
+        });
+
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.classList.remove('active');
+        });
+
+        // If the clicked item was not already active, open it
+        if (!isActive) {
+            accordionContent.style.display = 'block';
+            button.classList.add('active');
+        }
+    });
+});
+
+
+</script>

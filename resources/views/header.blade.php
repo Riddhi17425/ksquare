@@ -1,0 +1,1248 @@
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<!--<html lang="en-US" class="no-js no-svg">-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Facebook Card -->
+    <meta property="og:locale" content="en_US">
+    @if(request()->is('/'))
+        <meta property="og:type" content="website" />
+    @else
+        <meta property="og:type" content="article" />
+    @endif
+    <meta property="og:title" content="{{ $meta ?? '' }}" />
+    <meta property="og:description" content="{!! $desc ?? '' !!}" />
+    <meta property="og:url" content="{{url()->current()}}" />
+    @if($ogimage ?? '')
+    <meta property="og:image" content="{{$ogimage}}" /> 
+    @endif
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="627">
+<!--  -->
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        document.documentElement.className = document.documentElement.className + ' yes-js js_active js'
+    </script>
+    <title> {!!$meta!!} </title>
+    <meta name="description" content="{!!$desc!!}">
+
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5VH8QFM');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '5078923888874632');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=549937337038388&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel CodeGTM-5VH8QFM -->
+  
+
+
+
+    <!-- Ksquare Local Business Schema -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Solar Products by Ksquare Energy",
+  "description": "Ksquare Energy offers a range of solar products, including solar panels, inverters, wires, and ACDB/DCDB boxes.",
+  "image": "https://www.ksquareenergy.com/public/images/banner.jpg",
+  "brand": {
+    "@type": "Brand",
+    "name": "Ksquare Energy"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.ksquareenergy.com",
+    "price": "100.00",
+    "priceCurrency": "INR",
+    "priceValidUntil": "2024-12-31",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "500",
+        "currency": "INR"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "IN"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 3,
+          "maxValue": 7,
+          "unitCode": "day"
+        }
+      }
+    },
+    "handlingTime": {
+      "@type": "QuantitativeValue",
+      "value": 1,
+      "unitCode": "day"
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "returnPolicyCategory": "https://schema.org/ReturnByMail"
+    },
+    "applicableCountry": {
+      "@type": "Place",
+      "addressCountry": "IN"
+    }
+  },
+  "category": [
+    "Solar Panels",
+    "Inverters",
+    "Cables",
+    "Distribution Boxes"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 4.8,
+    "reviewCount": 6000
+  }
+}
+</script>
+
+    <!-- ./Ksquare Local Business Schema -->
+    <link rel='dns-prefetch' href='https://fonts.googleapis.com/' />
+    <link rel='dns-prefetch' href='https://s.w.org/' />
+    <link href='https://fonts.gstatic.com/' crossorigin rel='preconnect' />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js" integrity="sha512-KFHXdr2oObHKI9w4Hv1XPKc898mE4kgYx58oqsc/JqqdLMDI4YjOLzom+EMlW8HFUd0QfjfAvxSL6sEq/a42fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/additional-methods.min.js" integrity="sha512-owaCKNpctt4R4oShUTTraMPFKQWG9UdWTtG6GRzBjFV4VypcFi6+M3yc4Jk85s3ioQmkYWJbUl1b2b2r41RTjA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js" integrity="sha512-j7/1CJweOskkQiS5RD9W8zhEG9D9vpgByNGxPIqkO5KrXrwyDAroM9aQ9w8J7oRqwxGyz429hPVk/zR6IOMtSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="public/css/style.css">
+    <script>
+        window._wpemojiSettings = {
+            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/",
+            "ext": ".png",
+            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/",
+            "svgExt": ".svg",
+            "source": {
+                "concatemoji": "https:\/\/demo.creativesplanet.com\/greenly\/elementor-site1\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.6"
+            }
+        };
+        /*! This file is auto-generated */
+        ! function(e, a, t) {
+            var n, r, o, i = a.createElement("canvas"),
+                p = i.getContext && i.getContext("2d");
+
+            function s(e, t) {
+                var a = String.fromCharCode;
+                p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0);
+                e = i.toDataURL();
+                return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL()
+            }
+
+            function c(e) {
+                var t = a.createElement("script");
+                t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t)
+            }
+            for (o = Array("flag", "emoji"), t.supports = {
+                    everything: !0,
+                    everythingExceptFlag: !0
+                }, r = 0; r < o.length; r++) t.supports[o[r]] = function(e) {
+                if (!p || !p.fillText) return !1;
+                switch (p.textBaseline = "top", p.font = "600 32px Arial", e) {
+                    case "flag":
+                        return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([
+                            55356, 56826, 55356, 56819
+                        ], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418,
+                            56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447
+                        ], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203,
+                            56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447
+                        ]);
+                    case "emoji":
+                        return !s([55357, 56424, 55356, 57342, 8205, 55358, 56605, 8205, 55357, 56424, 55356, 57340], [
+                            55357, 56424, 55356, 57342, 8203, 55358, 56605, 8203, 55357, 56424, 55356, 57340
+                        ])
+                }
+                return !1
+            }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports
+                .everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]);
+            t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t
+                .readyCallback = function() {
+                    t.DOMReady = !0
+                }, t.supports.everything || (n = function() {
+                    t.readyCallback()
+                }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !
+                    1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function() {
+                    "complete" === a.readyState && t.readyCallback()
+                })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n
+                    .wpemoji)))
+        }(window, document, window._wpemojiSettings);
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <link rel='stylesheet' href='<?php echo URL::to('/'); ?>/public/css/custom.css' type='text/css' media='all' />
+    <!--<link rel='stylesheet' id='wp-block-library-css' href='<?php echo URL::to('/'); ?>/public/wp-includes/css/dist/block-library/style.min03e2.css?ver=5.4.6' type='text/css' media='all' />-->
+    <link rel='stylesheet' id='wc-block-style-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/stylea1ec.css?ver=2.3.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='jquery-selectBox-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/yith-woocommerce-wishlist/assets/css/jquery.selectBox7359.css?ver=1.2.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='yith-wcwl-font-awesome-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/yith-woocommerce-wishlist/assets/css/font-awesome.min1849.css?ver=4.7.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='yith-wcwl-main-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/yith-woocommerce-wishlist/assets/css/style8c0f.css?ver=2.2.13' type='text/css' media='all' />
+  
+    
+    <style id='yith-wcwl-main-inline-css'>
+        .wishlist_table .add_to_cart,
+        a.add_to_wishlist.button.alt {
+            border-radius: 16px;
+            -moz-border-radius: 16px;
+            -webkit-border-radius: 16px;
+        }
+    </style>
+    <link rel='stylesheet' id='contact-form-7-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/contact-form-7/includes/css/styles5fba.css?ver=5.2' type='text/css' media='all' />
+    <link rel='stylesheet' id='rs-plugin-settings-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/revslider/public/assets/css/rs6b038.css?ver=6.2.10' type='text/css' media='all' />
+
+    <link rel='stylesheet' id='woocommerce-layout-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/woocommerce/assets/css/woocommerce-layout3088.css?ver=3.7.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='woocommerce-smallscreen-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen3088.css?ver=3.7.0' type='text/css' media='only screen and (max-width: 768px)' />
+    <link rel='stylesheet' id='woocommerce-general-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/woocommerce/assets/css/woocommerce3088.css?ver=3.7.0' type='text/css' media='all' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style id='woocommerce-inline-inline-css'>
+        .woocommerce form .form-row .required {
+            visibility: visible;
+        }
+        .selectedTag{
+            position:relative;
+        }
+        .selectedTag-1{
+            position:absolute!important;
+            top:90%;
+            left:100%;
+            background-color:#fff;
+            width:100%;
+        }
+        .selectedTag-2{
+            position:absolute!important;
+            top:100%;
+            left:100%;
+            background-color:#fff;
+            width:100%;
+        }
+        .selectedTag-3{
+            position:absolute!important;
+            bottom:-20%;
+            left:100%;
+            background-color:#fff;
+            width:100%;
+        }
+        .cspt-navbar div>ul>li>a {
+            font-size: 11px!important;
+            }
+    </style>
+    <link rel='stylesheet' id='jquery-colorbox-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/yith-woocommerce-compare/assets/css/colorbox03e2.css?ver=5.4.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='yith-quick-view-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/yith-woocommerce-quick-view/assets/css/yith-quick-view03e2.css?ver=5.4.6' type='text/css' media='all' />
+    <style id='yith-quick-view-inline-css'>
+        #yith-quick-view-modal .yith-wcqv-main {
+            background: #ffffff;
+        }
+
+        #yith-quick-view-close {
+            color: #cdcdcd;
+        }
+
+        #yith-quick-view-close:hover {
+            color: #ff0000;
+        }
+    </style>
+    <link rel='stylesheet' id='woocommerce_prettyPhoto_css-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/woocommerce/assets/css/prettyPhoto03e2.css?ver=5.4.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-icons-shared-0-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.minb683.css?ver=5.12.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-icons-fa-brands-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.minb683.css?ver=5.12.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='cspt-all-gfonts-css' href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C300%2C300italic%2C500%2C500italic%2C700%2C700italic%2C900%2C900italic%2Citalic%2Cregular%2Cregular%2C700%2C500%7CAsap%3A700%2Cregular%2C600%2C500%7CPlayfair+Display%3Aitalic&amp;ver=5.4.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-icons-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min87e8.css?ver=5.7.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-animations-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/elementor/assets/lib/animations/animations.min7c53.css?ver=2.9.14' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-frontend-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/elementor/assets/css/frontend.min7c53.css?ver=2.9.14' type='text/css' media='all' />
+    <link rel='stylesheet' id='owl-carousel-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/greenly-addons/libraries/owl-carousel/assets/owl.carousel.min03e2.css?ver=5.4.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='owl-carousel-theme-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/greenly-addons/libraries/owl-carousel/assets/owl.theme.default.min03e2.css?ver=5.4.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='bootstrap-css' href='<?php echo URL::to('/'); ?>/public/wp-content/themes/greenly/libraries/bootstrap/css/bootstrap.min03e2.css?ver=5.4.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='cspt-core-style-css' href='<?php echo URL::to('/'); ?>/public/wp-content/themes/greenly/css/core03e2.css?ver=5.4.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='cspt-theme-style-css' href='<?php echo URL::to('/'); ?>/public/wp-content/themes/greenly/css/theme03e2.css?ver=5.4.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='magnific-popup-css' href='<?php echo URL::to('/'); ?>/public/wp-content/themes/greenly/libraries/magnific-popup/magnific-popup03e2.css?ver=5.4.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='cspt-base-icons-css' href='<?php echo URL::to('/'); ?>/public/wp-content/themes/greenly/libraries/creativesplanet-base-icons/css/creativesplanet-base-icons03e2.css?ver=5.4.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='balloon-css' href='<?php echo URL::to('/'); ?>/public/wp-content/themes/greenly/libraries/balloon/balloon.min03e2.css?ver=5.4.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='cspt-dynamic-style-css' href='<?php echo URL::to('/'); ?>/public/wp-admin/admin-ajax3dbe.css?action=cspt_auto_css&amp;ver=5.4.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='cspt-responsive-style-css' href='<?php echo URL::to('/'); ?>/public/wp-content/themes/greenly/css/responsive03e2.css?ver=5.4.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-post-17396-css' href='<?php echo URL::to('/'); ?>/public/wp-content/uploads/sites/2/elementor/css/post-1739632df.css?ver=1596257697' type='text/css' media='all' />
+    <link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Asap%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;ver=5.4.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-post-17515-css' href='<?php echo URL::to('/'); ?>/public/wp-content/uploads/sites/2/elementor/css/post-175155285.css?ver=1603368511' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-icons-shared-0-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.minb683.css?ver=5.12.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-icons-fa-solid-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.minb683.css?ver=5.12.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-icons-fa-brands-css' href='<?php echo URL::to('/'); ?>/public/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.minb683.css?ver=5.12.0' type='text/css' media='all' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src='<?php echo URL::to('/'); ?>/public/wp-includes/js/jquery/jquery4a5f.js?ver=1.12.4-wp'></script>
+    <script src='<?php echo URL::to('/'); ?>/public/wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+    <script src='<?php echo URL::to('/'); ?>/public/wp-content/plugins/greenly-addons/js/addon-scripts03e2.js?ver=5.4.6'>
+    </script>
+    <script src='<?php echo URL::to('/'); ?>/public/wp-content/plugins/revslider/public/assets/js/rbtools.minfc7a.js?ver=6.0.6'>
+    </script>
+    <script src='<?php echo URL::to('/'); ?>/public/wp-content/plugins/revslider/public/assets/js/rs6.minb038.js?ver=6.2.10'>
+    </script>
+    <script src='<?php echo URL::to('/'); ?>/public/wp-content/plugins/greenly-addons/libraries/owl-carousel/owl.carousel.min03e2.js?ver=5.4.6'>
+    </script>
+    <script src='<?php echo URL::to('/'); ?>/public/wp-content/plugins/greenly-addons/libraries/waypoints/waypoints.min03e2.js?ver=5.4.6'>
+    </script>
+    <script src='<?php echo URL::to('/'); ?>/public/wp-content/plugins/greenly-addons/libraries/numinate/numinate.min03e2.js?ver=5.4.6'>
+    </script>
+    <script src='<?php echo URL::to('/'); ?>/public/wp-content/themes/greenly/libraries/magnific-popup/jquery.magnific-popup.min03e2.js?ver=5.4.6'>
+    </script>
+    <script src='<?php echo URL::to('/'); ?>/public/wp-content/themes/greenly/libraries/sticky-toolkit/jquery.sticky-kit.min03e2.js?ver=5.4.6'>
+    </script>
+    <script>
+        /* <![CDATA[ */
+        var cspt_js_variables = {
+            "basepath": "https:\/\/demo.creativesplanet.com\/greenly\/elementor-site1",
+            "responsive": "1200"
+        };
+        /* ]]> */
+    </script>
+    <script src='<?php echo URL::to('/'); ?>/public/wp-content/themes/greenly/js/core03e2.js?ver=5.4.6'></script>
+    <script src='<?php echo URL::to('/'); ?>/public/wp-content/themes/greenly/libraries/isotope/isotope.pkgd.min03e2.js?ver=5.4.6'>
+    </script>
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="<?php echo URL::to('/'); ?>/public/wp-includes/wlwmanifest.xml" />
+    <link rel="canonical" href="{{url()->current()}}" />
+    <link rel="alternate" type="application/json+oembed" href="wp-json/oembed/1.0/embedcb97.json?url=https%3A%2F%2Fdemo.creativesplanet.com%2Fgreenly%2Felementor-site1%2Four-history%2F" />
+    <link rel="alternate" type="text/xml+oembed" href="wp-json/oembed/1.0/embedecc3?url=https%3A%2F%2Fdemo.creativesplanet.com%2Fgreenly%2Felementor-site1%2Four-history%2F&amp;format=xml" />
+    <!--slick slider-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+    <!--slick slider-->
+
+    <style>
+        .cspt-header-style-2 .cspt-sep-sticky-logo {
+            padding-right: 20px;
+        }
+
+        #woo_pp_ec_button {
+            display: none;
+        }
+    </style>
+    </noscript>
+    
+    <link rel="icon"  sizes="32x32" href="https://www.ksquareenergy.com/favicon.ico">
+<link rel="icon"  sizes="48x48" href="https://www.ksquareenergy.com/favicon.ico">
+<link rel="icon"  sizes="192x192" href="https://www.ksquareenergy.com/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.ksquareenergy.com/favicon.ico">
+<meta name="msapplication-TileImage" content="https://www.ksquareenergy.com/favicon.ico">
+    <!--<link rel="icon" href="<?php echo URL::to('/'); ?>/public/wp-content/uploads/sites/2/2019/01/favicon.png" sizes="32x32" />-->
+    <script>
+        function setREVStartSize(e) {
+            //window.requestAnimationFrame(function() {				 
+            window.RSIW = window.RSIW === undefined ? window.innerWidth : window.RSIW;
+            window.RSIH = window.RSIH === undefined ? window.innerHeight : window.RSIH;
+            try {
+                var pw = document.getElementById(e.c).parentNode.offsetWidth,
+                    newh;
+                pw = pw === 0 || isNaN(pw) ? window.RSIW : pw;
+                e.tabw = e.tabw === undefined ? 0 : parseInt(e.tabw);
+                e.thumbw = e.thumbw === undefined ? 0 : parseInt(e.thumbw);
+                e.tabh = e.tabh === undefined ? 0 : parseInt(e.tabh);
+                e.thumbh = e.thumbh === undefined ? 0 : parseInt(e.thumbh);
+                e.tabhide = e.tabhide === undefined ? 0 : parseInt(e.tabhide);
+                e.thumbhide = e.thumbhide === undefined ? 0 : parseInt(e.thumbhide);
+                e.mh = e.mh === undefined || e.mh == "" || e.mh === "auto" ? 0 : parseInt(e.mh, 0);
+                if (e.layout === "fullscreen" || e.l === "fullscreen")
+                    newh = Math.max(e.mh, window.RSIH);
+                else {
+                    e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+                    for (var i in e.rl)
+                        if (e.gw[i] === undefined || e.gw[i] === 0) e.gw[i] = e.gw[i - 1];
+                    e.gh = e.el === undefined || e.el === "" || (Array.isArray(e.el) && e.el.length == 0) ? e.gh : e.el;
+                    e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+                    for (var i in e.rl)
+                        if (e.gh[i] === undefined || e.gh[i] === 0) e.gh[i] = e.gh[i - 1];
+
+                    var nl = new Array(e.rl.length),
+                        ix = 0,
+                        sl;
+                    e.tabw = e.tabhide >= pw ? 0 : e.tabw;
+                    e.thumbw = e.thumbhide >= pw ? 0 : e.thumbw;
+                    e.tabh = e.tabhide >= pw ? 0 : e.tabh;
+                    e.thumbh = e.thumbhide >= pw ? 0 : e.thumbh;
+                    for (var i in e.rl) nl[i] = e.rl[i] < window.RSIW ? 0 : e.rl[i];
+                    sl = nl[0];
+                    for (var i in nl)
+                        if (sl > nl[i] && nl[i] > 0) {
+                            sl = nl[i];
+                            ix = i;
+                        }
+                    var m = pw > (e.gw[ix] + e.tabw + e.thumbw) ? 1 : (pw - (e.tabw + e.thumbw)) / (e.gw[ix]);
+                    newh = (e.gh[ix] * m) + (e.tabh + e.thumbh);
+                }
+                if (window.rs_init_css === undefined) window.rs_init_css = document.head.appendChild(document.createElement(
+                    "style"));
+                document.getElementById(e.c).height = newh + "px";
+                window.rs_init_css.innerHTML += "#" + e.c + "_wrapper { height: " + newh + "px }";
+            } catch (e) {
+                console.log("Failure at Presize of Slider:" + e)
+            }
+            //});
+        };
+    </script>
+    <style id="kirki-inline-styles">
+        /* cyrillic-ext */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu72xMKTU1Kvnz.woff) format('woff');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        /* cyrillic */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu5mxMKTU1Kvnz.woff) format('woff');
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        /* greek-ext */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu7mxMKTU1Kvnz.woff) format('woff');
+            unicode-range: U+1F00-1FFF;
+        }
+
+        /* greek */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu4WxMKTU1Kvnz.woff) format('woff');
+            unicode-range: U+0370-03FF;
+        }
+
+        /* vietnamese */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu7WxMKTU1Kvnz.woff) format('woff');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu7GxMKTU1Kvnz.woff) format('woff');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu4mxMKTU1Kg.woff) format('woff');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* cyrillic-ext */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fCRc-AMP6lbBP.woff) format('woff');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        /* cyrillic */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fABc-AMP6lbBP.woff) format('woff');
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        /* greek-ext */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fCBc-AMP6lbBP.woff) format('woff');
+            unicode-range: U+1F00-1FFF;
+        }
+
+        /* greek */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fBxc-AMP6lbBP.woff) format('woff');
+            unicode-range: U+0370-03FF;
+        }
+
+        /* vietnamese */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fCxc-AMP6lbBP.woff) format('woff');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fChc-AMP6lbBP.woff) format('woff');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fBBc-AMP6lQ.woff) format('woff');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* cyrillic-ext */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfCRc-AMP6lbBP.woff) format('woff');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        /* cyrillic */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfABc-AMP6lbBP.woff) format('woff');
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        /* greek-ext */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfCBc-AMP6lbBP.woff) format('woff');
+            unicode-range: U+1F00-1FFF;
+        }
+
+        /* greek */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfBxc-AMP6lbBP.woff) format('woff');
+            unicode-range: U+0370-03FF;
+        }
+
+        /* vietnamese */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfCxc-AMP6lbBP.woff) format('woff');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfChc-AMP6lbBP.woff) format('woff');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: Asap, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfBBc-AMP6lQ.woff) format('woff');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* vietnamese */
+        @font-face {
+            font-family: 'Asap';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/asap/KFO9CniXp96a4Tc2EZzSuDAoKsE61phGW3ieBVEfQzbgWw.woff) format('woff');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: 'Asap';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/asap/KFO9CniXp96a4Tc2EZzSuDAoKsE61phHW3ieBVEfQzbgWw.woff) format('woff');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Asap';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/asap/KFO9CniXp96a4Tc2EZzSuDAoKsE61phJW3ieBVEfQzY.woff) format('woff');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* vietnamese */
+        @font-face {
+            font-family: 'Asap';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/asap/KFO9CniXp96a4Tc2EZzSuDAoKsEI1phGW3ieBVEfQzbgWw.woff) format('woff');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: 'Asap';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/asap/KFO9CniXp96a4Tc2EZzSuDAoKsEI1phHW3ieBVEfQzbgWw.woff) format('woff');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Asap';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/asap/KFO9CniXp96a4Tc2EZzSuDAoKsEI1phJW3ieBVEfQzY.woff) format('woff');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* vietnamese */
+        @font-face {
+            font-family: 'Asap';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/asap/KFO9CniXp96a4Tc2EZzSuDAoKsHk0ZhGW3ieBVEfQzbgWw.woff) format('woff');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: 'Asap';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/asap/KFO9CniXp96a4Tc2EZzSuDAoKsHk0ZhHW3ieBVEfQzbgWw.woff) format('woff');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Asap';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/asap/KFO9CniXp96a4Tc2EZzSuDAoKsHk0ZhJW3ieBVEfQzY.woff) format('woff');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* vietnamese */
+        @font-face {
+            font-family: 'Asap';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/asap/KFO9CniXp96a4Tc2EZzSuDAoKsHd0ZhGW3ieBVEfQzbgWw.woff) format('woff');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: 'Asap';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/asap/KFO9CniXp96a4Tc2EZzSuDAoKsHd0ZhHW3ieBVEfQzbgWw.woff) format('woff');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Asap';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/asap/KFO9CniXp96a4Tc2EZzSuDAoKsHd0ZhJW3ieBVEfQzY.woff) format('woff');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* cyrillic */
+        @font-face {
+            font-family: 'Playfair Display';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/playfair-display/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtXA_3-uE0q0EJDo.woff) format('woff');
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        /* vietnamese */
+        @font-face {
+            font-family: 'Playfair Display';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/playfair-display/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXt7A_3-uE0q0EJDo.woff) format('woff');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: 'Playfair Display';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/playfair-display/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXt_A_3-uE0q0EJDo.woff) format('woff');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Playfair Display';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: url(<?php echo URL::to('/');
+                        ?>/public/wp-content/fonts/playfair-display/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA_3-uE0q0EA.woff) format('woff');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+</head>
+
+<body class="home page-template-default page page-id-17071 theme-greenly woocommerce-no-js cspt-sidebar-no elementor-default elementor-kit-16586 elementor-page elementor-page-17071">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VH8QFM" height="0" width="0" class="frame"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="page" class="site">
+        <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+        <header id="masthead" class="site-header cspt-header-style-2" data-sticky-height="68">
+            <div class="cspt-sticky-logo-no cspt-responsive-logo-no cspt-responsive-header-bgcolor-white">
+                <div class="cspt-header-top-area cspt-header-wrapper cspt-bg-color-transparent rs_header">
+                    <div class="container">
+                        <div class="d-flex align-items-center">
+                            <div class="site-branding cspt-logo-area">
+                                <div class="wrap">
+                                    <span class="site-title"><a href="{{route('index')}}" rel="home"><span class="site-title-text">Ksquare Energy</span><img class="cspt-main-logo" src="<?php echo URL::to('/'); ?>/public/images/logo1.png" alt="Ksquare Energy" title="Ksquare Energy" /></a>
+                                    </span>
+                                </div><!-- .wrap -->
+                            </div><!-- .site-branding -->
+                            <div class="cspt-header-info ml-auto">
+                                <div class="cspt-header-info-inner">
+                                    
+                                    <div class="cspt-header-box cspt-header-box-2">
+                                        <span class="cspt-header-box-icon"><i class="cspt-greenly-icon cspt-greenly-icon-email"></i></span> <span class="cspt-header-box-title">Email</span>
+                                        <span class="cspt-header-box-content"> <a href="mailto:info@ksquareenergy.com">info@ksquareenergy.com</a></span>
+                                    </div>
+                                    <div class="cspt-header-box cspt-header-box-3">
+                                        <span class="cspt-header-box-icon"><i class="cspt-greenly-icon cspt-greenly-icon-call"></i></span> <span class="cspt-header-box-title">Contact</span>
+                                        <span class="cspt-header-box-content"> <a href="tel:+9107969697979">+91 79 6969 7979</a></span>
+                                         
+                                    </div>
+                                     <div class="cspt-header-box cspt-header-box-4">
+                                         <div class="elementor-social-icons-wrapper">
+                                                <a class="elementor-icon elementor-social-icon elementor-social-icon-facebook-square elementor-repeater-item-ac0f598"
+                                                    target="_blank" href="https://www.facebook.com/ksquareenergy/">
+                                                    <span class="elementor-screen-only">Facebook-square</span>
+                                                    <i class="fab fa-facebook-square"></i>
+                                                </a>
+                                                <a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-c15a72c"
+                                                    target="_blank" href="https://www.instagram.com/ksquare_energy/">
+                                                    <span class="elementor-screen-only">Instagram</span>
+                                                    <i class="fab fa-instagram"></i>
+                                                </a>
+                                                <a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-b37381b"
+                                                    target="_blank" href="https://www.linkedin.com/company/ksquare-energy-pvt-ltd">
+                                                    <span class="elementor-screen-only">Linkedin</span>
+                                                    <i class="fab fa-linkedin"></i>
+                                                </a>
+
+                                            </div>
+                                    
+                                 
+                                </div>
+                            </div>
+                            <button id="menu-toggle" class="nav-menu-toggle">
+                                <i class="cspt-base-icon-menu"></i>
+                            </button>
+                        </div>
+                          <div class="ml-4" id="google_translate_element"></div>
+                    </div>
+                </div><!-- .container -->
+                <div class="cspt-header-menu-area-wrapper">
+                    <div class="cspt-header-menu-area cspt-header-sticky-yes cspt-sticky-type- cspt-sticky-bg-color-white cspt-bg-color-transparent">
+                        <div class="container">
+                            <div class="cspt-header-menu-area-inner d-flex align-items-center justify-content-between">
+                                <div class="navigation-top">
+                                    <div class="wrap">
+                                        <!--web menu-->
+                                        <nav id="site-navigation" class="d-none d-md-block main-navigation cspt-navbar  cspt-dropdown-active-color-globalcolor" aria-label="Top Menu">
+                                            <div class="menu-main-menu-container">
+                                                <ul id="cspt-top-menu" class="menu">
+                                                    <!--<li id="menu-item-8666" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-8666">-->
+                                                    <!--    <a href="{{route('index')}}">Home</a>-->
+                                                    <!--</li>-->
+                                                <li id="menu-item-8708" class="menu-item main_mega_menu menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8708">
+                                                    <a href="javascript:void(0)" style="color: black;">Our solutions</a>
+                                                    <!--<ul class="sub-menu" id="categories">-->
+                                                    <!--</ul>-->
+                                                    <ul class="sub-menu mega_menu">
+                                                                    <div class="container-fluid">
+                                                                        <div class="row" style="margin-right: -15px; margin-left: -15px;">
+                                                                            <div class="col-sm-6 col-md-6 col-lg-5 item_darkborderright p-0">
+                                                                              <div class="mega_menu_item" href="#">
+                                                                                  <div class="row">
+                                                                                      <h3 class="mega_menu_itemtitle">PRODUCTS</h3>
+                                                                                  </div> 
+                                                                                    <div class="row">   
+                                                                                        <div class="col-md-6 item_borderright p-0">
+                                                                                            <ul>
+                                                                                                <li ><a href="https://www.ksquareenergy.com/products/dcdb">DCDB</a></li>
+                                                                                                <li><a href="https://www.ksquareenergy.com/products/acdb">ACDB</a></li>
+                                                                                                <!--<li><a href="https://www.ksquareenergy.com/products/earthing-kit">Earthing Kit</a></li>-->
+                                                                                                <li><a href="https://www.ksquareenergy.com/products/cables-and-wires">Cables &amp; Wires</a></li>
+                                                                                                <li><a href="https://www.ksquareenergy.com/products/abs-pc-enclosures">ABS - PC Enclosures</a></li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                        <div class="col-md-6 p-0">
+                                                                                            <ul>
+                                                                                                <li ><a href="https://www.ksquareenergy.com/products/solar-acdb-nvr">ACDB/LT Panel NVR</a></li>
+                                                                                                <li><a href="https://www.ksquareenergy.com/products/electric-lt-panels">Electric LT Panels</a</li>
+                                                                                                <li><a href="javascript:void(0)" style="background-color:transparent"></a></li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-3 col-md-3 col-lg-3">
+                                                                                <div class="mega_menu_item" href="#"> 
+                                                                                   <h3 class="mega_menu_itemtitle">OUR BRANDS</h3>
+                                                                                    <ul>
+                                                                                        <li ><a href="https://www.ksquareenergy.com/products/solar-inverter">Solar Inverter</a></li>
+                                                                                        <li><a href="https://www.ksquareenergy.com/solsquare">Solsquare</a></li>
+                                                                                        <li><a href="https://www.ksquareenergy.com/kenclozer">Kenclozer</a></li>
+                                                                                        <li><a href="https://www.ksquareenergy.com/solplast">Solplast</a></li>
+                                                                                        <!--<li><a href="https://www.ksquareenergy.com/blitz">Blitz</a></li>-->
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-3 col-md-4 col-lg-4 mega_menu_bgblue">
+                                                                                <div class="mega_menu_item text-center" href="#"> 
+                                                                                    <img src="https://www.ksquareenergy.com/public/images/PDF_file_icon.png" class="mt-3 mb-4">
+                                                                                    <p class="mega_menu_itemsubtext mb-4">
+                                                                                        Download our Solar B2B brochure for innovative, sustainable energy solutions today!
+                                                                                    </p>
+                                                                                   <a href="https://www.ksquareenergy.com/public/images/B2B%20New%20Catalouge_compressed.pdf" target="_blank"> <button class="btn btn-white">
+                                                                                        Download Brochure <i class="fa fa-download ml-3"></i>
+                                                                                        </button>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                          
+                                                                        </div>
+                                                                    </div>
+                                                                </ul>
+                                                </li>
+                                                
+
+                                                
+                                                <script>
+                                                // $(document).ready(function() {
+                                                //     $.ajax({
+                                                //         url: "<?php echo URL::to('/'); ?>/categories",
+                                                //         type: 'GET',
+                                                //         success: function(res) {
+                                                //             $.each(res, function(k, v) {
+                                                //                 $("#categories").append(
+                                                //                     '<li class="selectedTag"><a href="<?php echo URL::to('/'); ?>/products/' + v.seourl + '">' + v.name + '</a></li>'
+                                                //                 );
+                                                //             });
+                                                
+                                                //             // if (window.location.href.includes("products/solar-grid-inverter")) {
+                                                //             //     $("#categories").append(
+                                                //             //         '<li class="selectedTag-1"><a href="<?php echo URL::to('/'); ?>/path/to/minra.pdf">Minra PDF</a></li>' +
+                                                //             //         '<li class="selectedTag-2"><a href="<?php echo URL::to('/'); ?>/path/to/ksolar.pdf">Ksolar PDF</a></li>' +
+                                                //             //         '<li class="selectedTag-3"><a href="<?php echo URL::to('/'); ?>/path/to/sofar.pdf">Sofar PDF</a></li>'
+                                                //             //     );
+                                                //             // }
+                                                //         }
+                                                //     });
+                                                // });
+                                                $(document).ready(function () {
+                                                    $.ajax({
+                                                        url: "<?php echo URL::to('/'); ?>/categories",
+                                                        type: 'GET',
+                                                        success: function (res) {
+                                                            let ksquareInverter = null;
+                                                            let otherCategories = '';
+                                                
+                                                            $.each(res, function (k, v) {
+                                                                if (v.name === 'Solar Inverter') {
+                                                                    // If Solar Inverter is found, skip this iteration (hide it)
+                                                                    return true; // Equivalent to "continue" in a loop
+                                                                }
+                                                
+                                                                if (v.seourl === 'ksquare-inverter') {
+                                                                    // ksquareInverter = '<li class="selectedTag"><a href="<?php echo URL::to('/'); ?>/products/' + v.seourl + '">' + v.name + '</a></li>';
+                                                                } else {
+                                                                    otherCategories += '<li class="selectedTag"><a href="<?php echo URL::to('/'); ?>/products/' + v.seourl + '">' + v.name + '</a></li>';
+                                                                }
+                                                            });
+                                                
+                                                            if (ksquareInverter) {
+                                                                $("#categories").append(ksquareInverter);
+                                                            }
+                                                            $("#categories").append(otherCategories);
+                                                        }
+                                                    });
+});
+
+                                                </script>
+
+
+                                                    <li id="menu-item-8675" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8675">
+                                                        <a href="javascript:void(0)" style="color: black;">EPC Projects</a>
+                                                        <ul class="sub-menu">
+                                                            <li id="menu-item-17691" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17691">
+                                                                <a href="{{route('residential')}}">Residential</a>
+                                                            </li>
+                                                            <li id="menu-item-17690" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17690">
+                                                                <a href="{{route('commercial')}}">Industrial/Commercial</a>
+                                                            </li>
+                                                            <li id="menu-item-17690" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17690">
+                                                                <a href="{{route('rooftop')}}">Rooftop Solar for Flat Owners</a>
+                                                            </li>
+                                                             <li id="menu-item-17690" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17690">
+                                                                <a href="{{route('klanding')}}">Rooftop Solar System</a>
+                                                            </li> 
+                                                        </ul>
+                                                    </li>
+                                                    <!--<li id="menu-item-8677" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8677">-->
+                                                    <!--    <a href="javascript:void(0)" style="color: black;">Our Brands</a>-->
+                                                    <!--    <ul class="sub-menu">-->
+                                                    <!--        <li id="menu-item-8704" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8704">-->
+                                                    <!--            <a href="<?php echo URL::to('/'); ?>/products/ksquare-inverter">Ksquare Inverter</a>-->
+                                                    <!--        </li>-->
+                                                    <!--        <li id="menu-item-8704" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8704">-->
+                                                    <!--            <a href="{{route('solsquare')}}">Solsquare</a>-->
+                                                    <!--        </li>-->
+                                                    <!--        <li id="menu-item-17701" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17701">-->
+                                                    <!--            <a href="{{route('kenclozer')}}">Kenclozer</a>-->
+                                                    <!--        </li>-->
+                                                    <!--        <li id="menu-item-17701" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17701">-->
+                                                    <!--            <a href="{{route('solplast')}}">Solplast</a>-->
+                                                    <!--        </li>-->
+                                                    <!--        <li id="menu-item-17701" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17701">-->
+                                                    <!--            <a href="{{route('blitz')}}">Blitz</a>-->
+                                                    <!--        </li>-->
+                                                    <!--    </ul>-->
+                                                    <!--</li>-->
+                                                    <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
+                                                        <a href="{{route('downloads')}}">Downloads</a>
+                                                    </li>
+                                                    <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
+                                                        <a href="{{route('blogs')}}">Blogs</a>
+                                                    </li>
+                                                    <!--<li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">-->
+                                                    <!--    <a href="{{route('social')}}">We're Social</a>-->
+                                                    <!--</li>-->
+                                                    <li id="menu-item-8674" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8674">
+                                                    <a href="javascript:void(0)" style="color: black;">About Us</a>
+                                                    <ul class="sub-menu">
+                                                        <li id="menu-item-17669" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17669">
+                                                            <a href="{{route('profile')}}">Profile</a>
+                                                        </li>
+                                                        <li id="menu-item-17668" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17668">
+                                                            <a href="{{route('our-team')}}">Team</a>
+                                                        </li>
+                                                        <li id="menu-item-17667" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17667">
+                                                            <a href="{{route('infrastructure')}}">Infrastructure</a>
+                                                        </li>
+                                                        <li id="menu-item-17665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17665">
+                                                            <a href="{{route('certificates')}}">Certificates</a>
+                                                        </li>
+                                                         
+                                                        <li id="menu-item-8678" class="menu-item menu-item-type-post_type menu-item-object-cspt-team-member menu-item-8678">
+                                                            <a href="{{route('awards')}}">Awards & Accolades</a>
+                                                        </li>
+                                                        <li id="menu-item-8678" class="menu-item menu-item-type-post_type menu-item-object-cspt-team-member menu-item-8678">
+                                                            <a href="{{route('eventlist')}}">Events and Exhibition</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                    <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
+                                                        <a href="https://ksquare-energy-pvt-ltd.odoo.com/jobs">Careers</a>
+                                                    </li>
+                                                    <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
+                                                        <a href="{{route('contact')}}">Contact Us</a>
+                                                    </li>
+                                                    <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
+                                                        <a href="{{route('calculator')}}">Calculator</a>
+                                                    </li>
+                                                    <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
+                                                        <a href="{{route('crmapi')}}">Track solar status</a>
+                                                    </li>
+                                                  
+                                                </ul>
+                                            </div>
+                                        </nav><!-- #site-navigation -->
+                                         <!--mobile menu-->
+  <nav id="site-navigation" class="d-block d-md-none main-navigation cspt-navbar  cspt-dropdown-active-color-globalcolor" aria-label="Top Menu">
+                                            <div class="menu-main-menu-container">
+                                                <ul id="cspt-top-menu" class="menu">
+                                                <li id="menu-item-8708" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8708">
+                                                    <a href="javascript:void(0)" style="color: black;">Products</a>
+                                                    <ul class="sub-menu" id="categories">
+                                                        
+                                                    </ul>
+                                                </li>
+                                                
+
+
+
+                                                    <li id="menu-item-8675" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8675">
+                                                        <a href="javascript:void(0)" style="color: black;">EPC Projects</a>
+                                                        <ul class="sub-menu">
+                                                            <li id="menu-item-17691" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17691">
+                                                                <a href="{{route('residential')}}">Residential</a>
+                                                            </li>
+                                                            <li id="menu-item-17690" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17690">
+                                                                <a href="{{route('commercial')}}">Industrial/Commercial</a>
+                                                            </li>
+                                                            <li id="menu-item-17690" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17690">
+                                                                <a href="{{route('rooftop')}}">Rooftop Solar for Flat Owners</a>
+                                                            </li>
+                                                            <li id="menu-item-17690" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17690">
+                                                                <a href="{{route('klanding')}}">Rooftop Solar System</a>
+                                                            </li> 
+                                                        </ul>
+                                                    </li>
+                                                    <li id="menu-item-8677" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8677">
+                                                        <a href="javascript:void(0)" style="color: black;">Our Brands</a>
+                                                        <ul class="sub-menu">
+                                                            <li id="menu-item-8704" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8704">
+                                                                <a href="<?php echo URL::to('/'); ?>/products/ksquare-inverter">Ksquare Inverter</a>
+                                                            </li>
+                                                            <li id="menu-item-8704" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8704">
+                                                                <a href="{{route('solsquare')}}">Solsquare</a>
+                                                            </li>
+                                                            <li id="menu-item-17701" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17701">
+                                                                <a href="{{route('kenclozer')}}">Kenclozer</a>
+                                                            </li>
+                                                            <li id="menu-item-17701" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17701">
+                                                                <a href="{{route('solplast')}}">Solplast</a>
+                                                            </li>
+                                                            <!--<li id="menu-item-17701" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17701">-->
+                                                            <!--    <a href="{{route('blitz')}}">Blitz</a>-->
+                                                            <!--</li>-->
+                                                        </ul>
+                                                    </li>
+                                                    <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
+                                                        <a href="{{route('downloads')}}">Downloads</a>
+                                                    </li>
+                                                    <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
+                                                        <a href="{{route('blogs')}}">Blogs</a>
+                                                    </li>
+                                                    <!--<li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">-->
+                                                    <!--    <a href="{{route('social')}}">We're Social</a>-->
+                                                    <!--</li>-->
+                                                    <li id="menu-item-8674" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8674">
+                                                    <a href="javascript:void(0)" style="color: black;">About Us</a>
+                                                    <ul class="sub-menu">
+                                                        <li id="menu-item-17669" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17669">
+                                                            <a href="{{route('profile')}}">Profile</a>
+                                                        </li>
+                                                        <li id="menu-item-17668" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17668">
+                                                            <a href="{{route('our-team')}}">Team</a>
+                                                        </li>
+                                                        <li id="menu-item-17667" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17667">
+                                                            <a href="{{route('infrastructure')}}">Infrastructure</a>
+                                                        </li>
+                                                        <li id="menu-item-17665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17665">
+                                                            <a href="{{route('certificates')}}">Certificates</a>
+                                                        </li>
+                                                         
+                                                        <li id="menu-item-8678" class="menu-item menu-item-type-post_type menu-item-object-cspt-team-member menu-item-8678">
+                                                            <a href="{{route('awards')}}">Awards & Accolades</a>
+                                                        </li>
+                                                        <li id="menu-item-8678" class="menu-item menu-item-type-post_type menu-item-object-cspt-team-member menu-item-8678">
+                                                            <a href="{{route('eventlist')}}">Events and Exhibition</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                    <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
+                                                        <a href="https://ksquare-energy-pvt-ltd.odoo.com/jobs">Careers</a>
+                                                    </li>
+                                                    <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
+                                                        <a href="{{route('contact')}}">Contact Us</a>
+                                                    </li>
+                                                    <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
+                                                        <a href="{{route('calculator')}}">Calculator</a>
+                                                    </li>
+                                                  <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
+                                                        <a href="{{route('crmapi')}}">Track solar status</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            </nav><!-- #site-navigation -->
+                                    </div><!-- .wrap -->
+                                </div><!-- .navigation-top -->
+                                <!--<div class="cspt-right-side">-->
+                                <!--    <div class="cspt-header-search-btn"><a href="#"><i-->
+                                <!--                class="cspt-base-icon-search-1"></i></a></div>-->
+                                <!--    <div class="cspt-header-search-form-wrapper">-->
+                                <!--        <div class="cspt-search-close"><i class="cspt-base-icon-cancel"></i></div>-->
+                                <!--        <form role="search" method="get" class="search-form" action="">-->
+                                <!--            <label for="search-form-60b1c506f1fb2">-->
+                                <!--                <span class="screen-reader-text">Search for:</span>-->
+                                <!--            </label>-->
+                                <!--            <input type="search" id="search-form-60b1c506f1fb2" class="search-field"-->
+                                <!--                placeholder="Write Search Keyword &amp; Press Enter" value=""-->
+                                <!--                name="s" />-->
+                                <!--            <button type="submit" class="search-submit">Search</button>-->
+                                <!--        </form>-->
+                                <!--    </div>-->
+                                <!--</div>-->
+                            </div><!-- .container -->
+                        </div><!-- .container -->
+                    </div><!-- .cspt-header-menu-area -->
+                </div><!-- .cspt-header-menu-area-wrapper -->
+            </div><!-- .cspt-header-wrapper -->
+
+<!--Google Translate      -->
+<!--<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'hi,bn,mr,te,ta,gu,ur,kn,or,ml,en,zh-CN,es,fr,ar,ru,pt' 
+        }, 'google_translate_element');
+    }
+</script>

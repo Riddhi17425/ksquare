@@ -1,0 +1,813 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller as BaseController;
+use App\Models\Category;
+use App\Models\Products;
+use App\Models\Contact;
+use App\Models\Inquiry;
+use Illuminate\Support\Facades\Mail;
+
+class Controller extends BaseController
+{
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function index()
+    {
+        $meta = "Best Solar Company in Ahmedabad - Manufacturer & Supplier - Ksquare Energy";
+        $desc = "Ksquare Energy is one of the top solar companies in ahmedabad. We are Gujarat's leading supplier & manufacturer of Solar Panels, Inverters, cables, ACDB, DCDB & Other Solar Accessories.";
+        $link = 'https://ksquareenergy.com/';
+        $category = Category::where('deleted_at', null)->get();
+        return view('index', ['category' => $category, 'meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function SendEmail($product,$email)
+    {
+        echo json_encode('hi');
+        echo json_encode($email);exit;
+        $meta = "Best Solar Company in Ahmedabad - Manufacturer & Supplier - Ksquare Energy";
+        $desc = "Ksquare Energy is one of the top solar companies in ahmedabad. We are Gujarat's leading supplier & manufacturer of Solar Panels, Inverters, cables, ACDB, DCDB & Other Solar Accessories.";
+        $link = 'https://ksquareenergy.com/';
+        $category = Category::where('deleted_at', null)->get();
+        return view('index', ['category' => $category, 'meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+    public function social()
+    {
+        $meta = "Ksquare Energy - Social Media Presence";
+        $desc = "Connect Us On Social Platforms For More Informations. Stay In Touch For latest Updates.";
+        $link = 'https://ksquareenergy.com/social';
+        return view('social', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function profile()
+    {
+        $meta = "Fastest Growing Solar Company in Ahmedabad, Gujarat | Ksquare Energy | Company Profile";
+        $desc = "Ksquare is Globally Recognized Leading Solar Energy Solutions Provider, Specializing In Solar Array Junction Box Manufacturing & Comprehensive EPC Solutions.";
+        $link = 'https://ksquareenergy.com/profile';
+        return view('profile', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function team()
+    {
+        $meta = "Team Behind Solar Mission | Ksquare Energy";
+        $desc = "Ksquare Energy's High Experienced Staff With up to date Solar Industry Knowledge. Contact Us At +91 7227931916/17 For Any Queries Related to Solar PV Systems.";
+        $link = 'https://ksquareenergy.com/team';
+        return view('our-team', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function infrastructure()
+    {
+        $meta = "Fastest Growing Solar Company With Smart Infrastructure | Ksquare Energy";
+        $desc = "Ksquare Energy Pvt. Ltd. is ISO Certified company having Smart Infrastructure. Our factory is spread across 4500 Sq. Feet with latest machineries, technology and skilled staff.";
+        $link = 'https://ksquareenergy.com/infrastructure';
+        return view('infrastructure', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function certificates()
+    {
+        $meta = "Quality That Speaks of Itself | Ksquare Certifications";
+        $desc = "Ksquare Energy Pvt. Ltd. is certified solar company with number of institutes. We ahve Electrical Contractor License - Geda Work Order - MSME - RoHS - IEC - ISO - PGVCL Certificates.";
+        $link = 'https://ksquareenergy.com/certificates';
+        return view('certificates', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function awards()
+    {
+        $meta = "Awards & Accolades | Ksquare Energy | Solar Energy Company in Ahmedabad";
+        $desc = "Ksquare Energy have been awarded by Industry's Top Awards for our Quality Work & Fastest Growing within the Industry Space. Here are some of them.";
+        $link = 'https://ksquareenergy.com/awards';
+        return view('awards', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function residential()
+    {
+        $meta = "Best Residential Solar Rooftop Service Provider in Ahmedabad - Ksquare Energy - 40% Government Subsidy";
+        $desc = "Ksquare Energy is one of the top residential solar rooftop service provider company based in Ahmedabad. 40% Government Subsidy. From Site Visit, Design to Installation & Maintainance of Solar Panels, we have experienced team of experts to do all this quickly with 0 errors.";
+        $link = 'https://ksquareenergy.com/residential-solar-rooftop-ahmedabad';
+        return view('residential', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function commercial()
+    {
+        $meta = "Best Commercial/Industrial Solar Solutions Provider in Ahmedabad - Ksquare Energy";
+        $desc = " Ksquare Energy is a top industrial & commercial solar solutions company from Ahmedabad providing quality services with experienced team of solar experts.";
+        $link = 'https://ksquareenergy.com/commercial-solar-system-ahmedabad';
+        return view('commercial', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function solsquare()
+    {
+        $meta = "Solsquare - Contract Manufacturer of Electric, Solar & Submersible Cables from Ahmedabad";
+        $desc = "Solsquare - Manufacturer of Electric, Solar & Submersible Cables is a Brand Owned By Ksquare energy & is Engaged Into Contract Manufacturing & Supply of Electric, Solar & Submersible Cables based in Ahmedabad.";
+        $link = 'https://ksquareenergy.com/solsquare';
+        return view('solsquare', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function kenclozer()
+    {
+        $meta = "Kenclozer - Premium Quality Polycarbonate Enclosures Manufacturer from Ahmedabad";
+        $desc = "Kenclozer is a Brand owned By Ksquare energy based in Ahmedabad, We manufacture Premium Quality Polycarbonate enclosures & Junction Boxes for Indoor as well as Outdoor Applications.";
+        $link = 'https://ksquareenergy.com/kenclozer';
+        return view('kenclozer', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function downloads()
+    {
+        $meta = "Ksquare Energy Brochure, Solar Product Catalogue & Presentation | Get Quote";
+        $desc = "Ksquare Energy Pvt. Ltd. Brochures & Guides are here. Download brochure for more information of Solar Products & Appliances.";
+        $link = 'https://ksquareenergy.com/downloads';
+        return view('downloads', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function contact()
+    {
+        $meta = "Contact Ksquare Energy Pvt. Ltd. - Solar Energy Solution Provider";
+        $desc = "We Are Located At B-403/404 Signature - 2 Sarkhej Sanand Road, Sarkhej, Ahmedabad - 382210. Contact Us At - +91 72279 31916/17 Or Drop Us Mail At - info@ksquareenergy.com";
+        $link = 'https://ksquareenergy.com/contact-us';
+        return view('contact', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function privacy()
+    {
+        $meta = " ";
+        $desc = " ";
+        $link = 'https://ksquareenergy.com/privacy-policy';
+        return view('privacy', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function blogs()
+    {
+        $meta = "Read Solar Blogs by Ksquare Energy";
+        $desc = "Ksquare Energy is Best Quality Solar Products Manufacturer based in Ahmedabad, Gujarat, India. Read regular Blogs related to Solar Industry Here.";
+        $link = 'https://ksquareenergy.com/blogs';
+        return view('blogs', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function blog_details1()
+    {
+        $meta = "Top reasons why solar energy is a cost-saving investment in 2022";
+        $desc = "Investment in Solar is cost-saving as, Over the years, electricity cost for the residential, commercial and industrial sector has risen up to a significant limit. And it's not surprising, as most of India’s power companies depend on fossil fuels.";
+        $link = 'https://ksquareenergy.com/Top%20reasons%20why%20solar%20energy%20is%20a%20cost-saving%20investment%20in%202022';
+        return view('blog1-detail', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function blog_details2()
+    {
+        $meta = "Impact of weather conditions on Solar Panels and their efficiency";
+        $desc = "Solar panel work in Hear, Cold & Other Weathers: solar panels work in most weather conditions and constantly serve the power. However, the performance of solar panels depends on the weather condition. If weather varies then there might be the possibility that energy from solar panels can be varied. ";
+        $link = 'https://ksquareenergy.com/Impact%20of%20weather%20conditions%20on%20Solar%20Panels%20and%20their%20efficiency';
+        return view('blog2-detail', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function blog_details3()
+    {
+        $meta = "Know the Benefits of Installing Solar Power System for the Industrial Sector";
+        $desc = "Benefits of Installing Solar Power System for the Industrial Sector: Traditional power sources are expensive, limited and major sources of pollution. On the other hand, solar power has an edge over all of it. It is the cleanest and cost-effective solution especially for meeting industrial demand.";
+        $link = 'https://ksquareenergy.com/Know%20the%20Benefits%20of%20Installing%20Solar%20Power%20System%20for%20the%20Industrial%20Sector';
+        return view('blog3-detail', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function blog_details4()
+    {
+        $meta = "Solar Energy – Meaning, How it works, Advantages, Disadvantages & Impact on environment";
+        $desc = "Solar energy is any kind of energy generated by the sun. Solar power works by converting sunlight to electricity & then it can be used or exported to the grid when it’s not needed.";
+        $link = 'https://www.ksquareenergy.com/solar-energy-ultimate-guide';
+        return view('blog4-detail', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+    public function blog_details5()
+    {
+        $meta = "Solar Energy is an alternative solution – Ksquare Energy";
+        $desc = "Solar energy is a clean form of energy that will meet the needs of future generations. It's an alternative to fossil fuels and a clean and environmentally beneficial source to rely on";
+        $link = 'https://www.ksquareenergy.com/solar-energy-alternative-to-fossil-fuel';
+        return view('blog5-detail', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+    
+    public function blog_details6()
+    {
+        $meta = "Debunking 6 Myths about Solar Energy – Ksquare Energy";
+        $desc = "You shouldn't judge a book by its cover, and here are 6 myths about solar energy you should know before investing or installing it.";
+        $link = 'https://www.ksquareenergy.com/debunking-6-myths-about-solar-energy';
+        return view('blog6-detail', ['meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+    
+    public function dashboard()
+    {
+        return view('admin.dashboard');
+    }
+
+    public function categories()
+    {
+        $category = Category::where('deleted_at', null)->get();
+        return $category;
+    }
+
+    public function productsList($nm)
+    {
+        $cats = Category::where('name', $nm)->first();
+        $cDesc = $cats->productDesc;
+        // echo $cats->id;exit;
+        $list = Products::where('category_id', $cats->id)->get();
+
+        $name =  $cats->name;
+        if ($name == 'DCDB') {
+            $meta = "Best Solar DCDB Manufacturer & Supplier In Ahmedabad";
+            $desc = "Ksquare is Superior Quality DCDB Manufacturer from Ahmedabad, Gujarat. Manufacturer & Supplier of wide range of DCDB 1-3.5KW, 4-7KW, 8-10KW, 11-16KW, 16-21KW, 21-25KW, 26-35KW, 35-55KW, 40-60 KW, 50-65KW, 60-80KW, 80-100KW";
+            $link = 'https://ksquareenergy.com/products/dcdb';
+        }
+        if ($name == 'ACDB') {
+            $meta = "Best Solar ACDB Manufacturer & Supplier In Ahmedabad";
+            $desc = "Ksquare is Superior Quality ACDB Manufacturer from Ahmedabad, Gujarat. Manufacturer & Supplier of wide range of ACDB 1-5KW, 5-10KW, 11-18KW, 19-25KW, 26-35KW, 36-60KW, 61-70KW, 71-120KW";
+            $link = 'https://ksquareenergy.com/products/ACDB';
+        }
+        if ($name == 'Earthing Kit') {
+            $meta = "Best Earthing Kit Manufacturer & Supplier In Ahmedabad";
+            $desc = "KSquare is Supirior Quality Earthing Kit Manufacturer in Ahmedabad, Gujarat. for Protection Against Thundering. Different Variants like Single Spike, Four Spike Earthing Kit, ESE Type LA, Pipe In Type Earthing Rod are available.";
+            $link = 'https://ksquareenergy.com/products/Earthing%20Kit';
+        }
+        if ($name == 'Cables & Wires') {
+            $meta = "Best Solar Cables & Wires Manufacturer & Supplier In Ahmedabad";
+            $desc = "India's Prominent & Leading Solar House, Industrial Cables & Wires by Ksquare Energy based in Ahmedabad. High Safety Standard With Core Copper & Aluminum Armoured, UnArmoured & Submersible Option Available.";
+            $link = 'https://ksquareenergy.com/products/Cables%20&%20Wires';
+        }
+        if ($name == 'ABS - PC Enclosures') {
+            $meta = "Best ABS/Polycarbonate Enclosures For Solar Projects in Ahmedabad";
+            $desc = "Ahmedabad based Ksquare Provides Best ABS/PC Enclosures. SRT-ABS-1813T, SRT-ABS-1818T, SRT-ABS-2920T, SRT-ABS-3819T, IND-ABS-2828T, IND-ABS-3828T, IND-ABS-5638T & more ABS/PC enclosures available in a wide variety of sizes and styles to fit your ABS box requirements.";
+            $link = 'https://ksquareenergy.com/products/ABS%20-%20PC%20Enclosures';
+        }
+        if ($name == 'Solar ACDB - NVR') {
+            $meta = "Best Solar ACDB- NVR For Commercial & Industrial Projects in Ahmedabad";
+            $desc = "Ahmedabad based Ksquare provides Superior Quality Solar ACDB-NVR for Commercial & Industrial Projects. For more details inquire now.";
+            $link = 'https://ksquareenergy.com/products/Solar%20ACDB%20-%20NVR';
+        }
+        if ($name == 'Electric LT Panels') {
+            $meta = "Electric LT-Panels Manufacturer For Large Scale Solar Projects in Ahmedabad";
+            $desc = "The Most Trusted Electric LT-Panels Manufacturer of India. Ahmedabad based Ksquare Energy's low tension panels set High Standard in Industry by best quality.";
+            $link = 'https://ksquareenergy.com/products/Electric%20LT%20Panels';
+        }
+        if ($name == 'Other BOS') {
+            $meta = "Best Solar BOS products manufacturer in Ahmedabad";
+            $desc = "Ksquare is Ahmedabad's best manufacturer of all Solar BOS Products. Cables - MC4 Connectors - SS304 J Hook - Base Plate - Fasteners - Fasteners 2 - Mid End - Zink Spray - PVC Pipes - Cable Tie - Nail Clip Available.";
+            $link = 'https://ksquareenergy.com/products/Other%20BOS';
+        }
+        if ($name == 'Goldi Panel') {
+            $meta = "Goldi Panels Distributor Ahmedabad, Best Quality Solar Panel";
+            $desc = "Ksquare Energy is Distributor of Goldi Panels and offers Superior Quality Solar Products Manufacturer In Ahmedabad, Gujarat, India. Best Quality DCR & Non DCR Modules available.";
+            $link = 'https://ksquareenergy.com/products/Goldi%20Panel';
+        }
+        if ($name == 'Sofar Inverter') {
+            $meta = "Sofar Solar Inverters, Best Quality Inverters Distributor Ahmedabad";
+            $desc = "Sofar Solar Inverters Distributor in Ahmedabad, Gujarat. We provide reliable energy solutions for residential and commercial applications.";
+            $link = 'https://ksquareenergy.com/products/Sofar%20Inverter';
+        }
+        return view('productsList', ['list' => $list, 'meta' => $meta, 'desc' => $desc, 'link' => $link, 'nm' => $nm, 'cDesc' => $cDesc]);
+    }
+
+    public function productDetails($name)
+    {
+        $meta = "Superior Quality Products";
+        $desc = "";
+        $link = "https://ksquareenergy.com/productDetails/<?php echo str_replace(' ', '%20', name);?>";
+        $list = Products::where('name', $name)->first();
+        // echo json_encode($list);exit;
+        return view('productDetails', ['list' => $list, 'meta' => $meta, 'desc' => $desc, 'link' => $link]);
+    }
+
+    public function contactSubmit()
+    {
+
+        // unset($_POST['_token']);
+        $array = $_POST;
+        // $name = $_POST['name'];
+        // $email = $_POST['email'];
+        // $phone = $_POST['phone'];
+        // $subject = $_POST['subject'];
+        // $message = $_POST['message'];
+        // echo json_encode($_POST);
+        // exit;
+
+        if (Contact::create($array)) {
+            // $data = "
+            // New Contact Form Submitted \n
+            // Contact Details Are Here,\n
+            // Name - $name
+            // Email - $email
+            // Contact Number - $phone
+            // Subject - $subject
+            // Message - $message \n
+            // From,
+            // Team Ksquare Energy
+            // ";
+
+            // Mail::raw($data, function ($message) {
+            //     $message->to(array("info@ksquareenergy.com", "dm2.intelliworkz@gmail.com"))
+            //       ->subject('Contact Form Submitted in Ksquare Energy');
+            //   });
+
+                // echo 'done';
+            return back()->with("success", "Thanks for reaching us, Our team will contact you soon!");
+        } else {
+            return back()->with("error", "Please try again!");
+            // echo 'Some Error';
+        }
+    }
+
+    public function inquirySubmit()
+    {
+        // unset($_POST['_token']);
+        $array = $_POST;
+
+        // echo json_encode($_POST);
+        // exit;
+
+        // $name = $_POST['name'];
+        // $email = $_POST['email'];
+        // $phone = $_POST['phone'];
+        // $city = $_POST['city'];
+        // $message = $_POST['message'];
+        // echo json_encode($_POST);
+        // exit;
+
+        if (Inquiry::create($array)) {
+            // $data = "
+            // New Inquiry Form Submitted \n
+            // Contact Details Are Here,\n
+            // Name - $name
+            // Email - $email
+            // Contact Number - $phone
+            // City - $city
+            // Message - $message \n
+            // From,
+            // Team Ksquare Energy
+            // ";
+
+            // Mail::raw($data, function ($message) {
+            //     $message->to(array("info@ksquareenergy.com", "dm2.intelliworkz@gmail.com"))
+            //       ->subject('Inquiry Form Submitted in Ksquare Energy');
+            //   });
+
+            return back()->with("success", "Your Inquiry Submitted!");
+        } else {
+            return back()->with("error", "Please try again!");
+        }
+    }
+    
+    //20-09-2024
+      public function inquirySubmit(Request $request)
+    {
+        // Validation
+        $validatedData = $request->validate([
+            'name' => 'required|regex:/^[a-zA-Z\s]+$/|max:30',
+            'subject' => 'required',
+            'message' => 'required|regex:/^[a-zA-Z\s]+$/|max:100',
+            'phone' => 'required|regex:/^[0-9]{1,10}$/|max:10',
+            'email' => 'required|email',
+        ], [
+            'name.required' => 'Please enter the name.',
+            'name.regex' => 'Please enter a valid name.',
+            'name.max' => 'Please enter maximum 30 characters.',
+            'subject.required' => 'Please select the subject.',
+            'message.required' => 'Please enter the message.',
+            'message.regex' => 'Please enter a valid message.',
+            'message.max' => 'Please enter maximum 100 characters.',
+            'phone.required' => 'Please enter the contact number.',
+            'phone.regex' => 'Please enter valid contact number.',
+            'phone.max' => 'Please enter maximum 10 digits.',
+            'email.required' => 'Please enter the email.',
+            'email.email' => 'Please enter a valid email address.',
+        ]);
+
+        // Data to be sent to SheetDB
+        $data = [
+            'name' => $validatedData['name'],
+            'email' => $validatedData['email'],
+            'phone' => $validatedData['phone'],
+            'subject' => $validatedData['subject'],
+            'message' => $validatedData['message'],
+             'source' => $request->input('source')
+        ];
+      
+        // Send data to SheetDB
+       try {
+              $result = Contact::create($data);
+          
+
+            $client = new Client();
+            $response = $client->post('https://www.ksquareenergy.cloud/web/hook/22a279e2-a907-4e4b-8b14-bf02ce7809f0', [
+                'json' => [$data]
+            ]);
+//  dd($response->getStatusCode());
+            // Debugging response
+            $responseData = json_decode($response->getBody(), true);
+            //dd($responseData);
+
+            if ($response->getStatusCode() === 200) {
+                return redirect('thank-you')->with('success', 'Your message has been submitted successfully!');
+            } else {
+                return redirect()->back()->with('error', 'Failed to submit your message. Please try again later.');
+            }
+        } catch (\Exception $e) {
+            Log::error('Error submitting contact form: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Failed to submit your message. Please try again later.');
+        }
+    }
+    
+    
+    // public function contactSubmit(Request $request)
+    // {
+    //         $validatedData = $request->validate([
+    //             'name' => 'required|regex:/^[a-zA-Z\s]+$/|max:30',
+    //             'subject' => 'required',
+    //             'message' => 'required|regex:/^[a-zA-Z\s]+$/|max:100',
+    //             'phone' => 'required|regex:/^[0-9]{1,10}$/|max:10',
+    //             'email' => 'required|email',
+    //         ], [
+    //             'name.required' => 'Please enter the name.',
+    //             'name.regex' => 'Please enter a valid name.',
+    //             'name.max' => 'Please enter maximum 30 character.',
+    //             'address.required' => 'Please enter the address.',
+    //             'address.regex' => 'Please enter a valid address.',
+    //             'address.max' => 'Please enter maximum 50 address.',
+    //             'subject.required' => 'Please select the subject.',
+    //             'message.required' => 'Please enter the message.',
+    //             'message.regex' => 'Please enter a valid message.',
+    //             'message.max' => 'Please enter maximum 100 message.',
+    //             'phone.required' => 'Please enter the contact number.',
+    //             'phone.regex' => 'Please enter valid contact number.',
+    //             'phone.max' => 'Please enter maximum 10 digit.',
+    //             'email.required' => 'Please enter the email.',
+    //             'email.email' => 'Please enter a valid email address.',
+    //         ]);
+    //     // unset($_POST['_token']);
+    //     $array = $_POST;
+    //     $name = $_POST['name'];
+    //     $email = $_POST['email'];
+    //     $phone = $_POST['phone'];
+    //     $subject = $_POST['subject'];
+    //     $message = $_POST['message'];
+    //     // echo json_encode($_POST);
+    //     // exit;
+
+    //     if (Contact::create($array)) {
+    //         $data = "
+    //         New Contact Form Submitted \n
+    //         Contact Details Are Here,\n
+    //         Name - $name
+    //         Email - $email
+    //         Contact Number - $phone
+    //         Subject - $subject
+    //         Message - $message \n
+    //         From,
+    //         Team Ksquare Energy
+    //         ";
+
+    //         Mail::raw($data, function ($message) {
+    //             $message->to(array("info@ksquareenergy.com", "dm2.intelliworkz@gmail.com"))
+    //               ->subject('Contact Form Submitted in Ksquare Energy');
+    //           });
+
+    //             // echo 'done';
+    //         return redirect('thank-you')->with("success", "Thanks for reaching us, Our team will contact you soon!");
+    //     } else {
+    //         return back()->with("error", "Please try again!");
+    //         // echo 'Some Error';
+    //     }
+    // }
+
+
+// public function contactSubmit(Request $request)
+// {
+//     // Validation
+//     $validatedData = $request->validate([
+//         'name' => 'required|regex:/^[a-zA-Z\s]+$/|max:30',
+//         'subject' => 'required',
+//         'message' => 'required|regex:/^[a-zA-Z\s]+$/|max:100',
+//         'phone' => 'required|regex:/^[0-9]{1,10}$/|max:10',
+//         'email' => 'required|email',
+//     ], [
+//         'name.required' => 'Please enter the name.',
+//         'name.regex' => 'Please enter a valid name.',
+//         'name.max' => 'Please enter maximum 30 characters.',
+//         'subject.required' => 'Please select the subject.',
+//         'message.required' => 'Please enter the message.',
+//         'message.regex' => 'Please enter a valid message.',
+//         'message.max' => 'Please enter maximum 100 characters.',
+//         'phone.required' => 'Please enter the contact number.',
+//         'phone.regex' => 'Please enter valid contact number.',
+//         'phone.max' => 'Please enter maximum 10 digits.',
+//         'email.required' => 'Please enter the email.',
+//         'email.email' => 'Please enter a valid email address.',
+//     ]);
+
+//     // Data
+//     $data = $request->only(['name', 'email', 'phone', 'subject', 'message']);
+    
+//     // Save to database
+//     try {
+//         Contact::create($data);
+
+//         return redirect('thank-you')->with("success", "Thanks for reaching us, Our team will contact you soon!");
+//     } catch (\Exception $e) {
+//         Log::error('Error submitting contact form: ' . $e->getMessage());
+//         return back()->with("error", "Please try again!");
+//     }
+// }
+
+
+
+// public function contactSubmit(Request $request)
+// {
+//     // Validation
+//     $validatedData = $request->validate([
+//         'name' => 'required|regex:/^[a-zA-Z\s]+$/|max:30',
+//         'subject' => 'required',
+//         'message' => 'required|regex:/^[a-zA-Z\s]+$/|max:100',
+//         'phone' => 'required|regex:/^[0-9]{1,10}$/|max:10',
+//         'email' => 'required|email',
+//     ], [
+//         'name.required' => 'Please enter the name.',
+//         'name.regex' => 'Please enter a valid name.',
+//         'name.max' => 'Please enter maximum 30 characters.',
+//         'subject.required' => 'Please select the subject.',
+//         'message.required' => 'Please enter the message.',
+//         'message.regex' => 'Please enter a valid message.',
+//         'message.max' => 'Please enter maximum 100 characters.',
+//         'phone.required' => 'Please enter the contact number.',
+//         'phone.regex' => 'Please enter valid contact number.',
+//         'phone.max' => 'Please enter maximum 10 digits.',
+//         'email.required' => 'Please enter the email.',
+//         'email.email' => 'Please enter a valid email address.',
+//     ]);
+
+//     // Data
+//     $data = $request->only(['name', 'email', 'phone', 'subject', 'message']);
+    
+//     // Save to database
+//     try {
+//         // Save to SheetDB
+//         $sheetdb = new SheetDB('58f61be4dda40');
+//         $sheetdb->create($data);
+
+//         // Save to Laravel database
+//         Contact::create($data);
+
+//         return redirect('thank-you')->with("success", "Thanks for reaching us, Our team will contact you soon!");
+//     } catch (\Exception $e) {
+//         Log::error('Error submitting contact form: ' . $e->getMessage());
+//         return back()->with("error", "Please try again!");
+//     }
+// }
+
+
+
+// public function contactSubmit(Request $request)
+// {
+//     // Validation
+//     $validatedData = $request->validate([
+//         'name' => 'required|regex:/^[a-zA-Z\s]+$/|max:30',
+//         'subject' => 'required',
+//         'message' => 'required|regex:/^[a-zA-Z\s]+$/|max:100',
+//         'phone' => 'required|regex:/^[0-9]{1,10}$/|max:10',
+//         'email' => 'required|email',
+//     ], [
+//         'name.required' => 'Please enter the name.',
+//         'name.regex' => 'Please enter a valid name.',
+//         'name.max' => 'Please enter maximum 30 characters.',
+//         'subject.required' => 'Please select the subject.',
+//         'message.required' => 'Please enter the message.',
+//         'message.regex' => 'Please enter a valid message.',
+//         'message.max' => 'Please enter maximum 100 characters.',
+//         'phone.required' => 'Please enter the contact number.',
+//         'phone.regex' => 'Please enter valid contact number.',
+//         'phone.max' => 'Please enter maximum 10 digits.',
+//         'email.required' => 'Please enter the email.',
+//         'email.email' => 'Please enter a valid email address.',
+//     ]);
+
+//     // Data
+//     $data = $request->only(['name', 'email', 'phone', 'subject', 'message']);
+
+//     // Save to database (You should add your database saving logic here)
+
+//     // Save to Google Sheets
+//     try {
+//         $client = new Google_Client();
+//         $client->setAuthConfig([
+//             "type" => "service_account",
+//             "project_id" => "ksquare-424208",
+//             "private_key_id" => "be15bd5b975c2ada544e660f7c77b09adea23bb3",
+//             "private_key" => "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCynQ1ItKw2+g5q\nTF5rF8gVm3tPPg2wopxjamb3kvq1qEXkK62ajgljfPaC7vGO28HDICw7PUSf0Lsa\nMB7zCs7DGDfZs+LHUfq82F3vtGSpXLDe9fObQauEcHm+rE+4U0yZJ28KPjCl8lbR\nKUrdaTFbXTu+xJry7bI6G2LuW8Ln7csCIzW1LXQT+zC3VxsiiMgxdX0etDbYSimR\nFA9lrlA2E48WQmGCTRY6IKXaTgTPZHPQzrXbmm/YQCNEyZQhqKr6wxlDkJguwkIn\nkyJLWjJgK1O3zmyIeQ+1eqRIejcsDMwaiJzfIvIlTn2uFb9/Pig0IxociGzisfbJ\ng1Et1mDVAgMBAAECggEAVUnFFBihu0bAJ2X8F+stMZQi133sD5I2VwpxzHo0mRWW\n+hMZPJniRc1f8LmkQvEQntn4BPmGkUGcdi7QOIHKpUIlOSE6gq7UqeQvRsy+3FhU\nZMLQ5iv/eKg0miWxk3TDOMapsRxtInCLoCi1hPA8D0J/yuIakzGJT1HQdbz/XrtS\nnNO299ZQeRevkU6s+rdiW58prsbawj2EGi3c4S+cYRY6y++MnzuIngTluQHiXtc+\nu8TMri9OKhz8e05M+u57a2PXWsbVx2QIDeew0FcEpsw5Acn8J0wYPp+HxCLQ0YDG\nUZL2pkJvA5J1Uo2UAA3UZ+FENBW1QgejB4OAtAa/aQKBgQDpUcXkB3G7KhXh0PEY\nEEBOFdBxxxFXctzI8NtqsUV2T42oSeW4pwXFdleQpGrAVpVRChSVOb6VPxZnThD5\nw1gTx6VcAuvxRCnxbslsj2aaL4H880E7EghS36pVpO+BFRzNVshFtbXUVPnH6vrE\nfTkudjRYHOKD6GoRGDgMXjQ01wKBgQDD+eeFlExApij4xIuwXykJ7dJSHs9pNkXQ\nV0z83Yl6fnZcDlOXT6tQnwa/2ytgFVI9XvQKpsRn4UXSNletpd2eh8pK0aHqSfsf\nrBPaFob3SBEePZTy40mwEVpj+exHv6eykZxgk2MomHqYPRoLHC6YFfDiURwsKG2E\nz1QRuDm2MwKBgFq8mXgfyQQfzti+GDTihQ+Y/jJxV3YpzmE7AinQ/RGQyKds7bDN\nC7qKVm2C850PTwxwHicWiN6j5UORoZpwdL1khBNvc3ClsKYbDqxwbFeEKEpGE9U0\nIxaPsz+RYC9UFZppqIMrsqX70hQEdzeY93bxM1QdD5568VzqjUmKDUWLAoGAJ1Wn\ndJY5X9h57MR2TSYsdIO5bSYl9zYfeRuspixJBb8QPpXZjUs+VWY10phI8nYVFaBT\nVzf1v+vlObYSjxX1j3Yt0iqVVxMWRlsheOqAmG1skidGGCIqjh5NiDeHhzcej6bO\nPkwW4PUJ1jidW5GCgKAWwzYIc4yBvuBmPVA+tSUCgYBimpB4l06bizCHUJUXEfip\noskKgLx6hxSASenk62glM+hS/EZs9/wtNUk4qhSTvivH8518trN5p0OaUDUIlLVa\nKtsYrzyG0+j28NkOaIDXBUwL1XwV+zxnJ6sD3fwZsKCYAXHlAVxl+z6NAz2g/938\ngbV52isre7zyefI2OG/Svg==\n-----END PRIVATE KEY-----\n",
+//             "client_email" => "google-sheet-api@ksquare-424208.iam.gserviceaccount.com",
+//             "client_id" => "1015267746411-g6mpdmokpqn6l630dal8f4hnhjfql358.apps.googleusercontent.com",
+//             "auth_uri" => "https://accounts.google.com/o/oauth2/auth",
+//             "token_uri" => "https://oauth2.googleapis.com/token",
+//             "auth_provider_x509_cert_url" => "https://www.googleapis.com/oauth2/v1/certs",
+//             "client_x509_cert_url" => "https://www.googleapis.com/robot/v1/metadata/x509/google-sheet-api%40ksquare-424208.iam.gserviceaccount.com",
+//         ]);
+        
+//         // Set the required scope
+//         $client->addScope(Google_Service_Sheets::SPREADSHEETS);
+        
+//         // Create a Sheets service instance
+//         $service = new Google_Service_Sheets($client);
+        
+//         // Spreadsheet ID and range
+//         $spreadsheetId = '1-9ZadAk5FMrkGYyK8GdUI6JXfd1zndlpdp1eVZq53iE';
+//         $range = 'Sheet1!A1:E1'; // Specify the correct range
+        
+//         // Data to be inserted
+//         $rowData = [$data['name'], $data['email'], $data['phone'], $data['subject'], $data['message']];
+//         // dd($rowData);
+//         // Wrap the row data in another array
+//         $values = [$rowData];
+        
+//         // Create the request body
+//         $requestBody = new Google_Service_Sheets_ValueRange([
+//             'values' => $values
+//         ]);
+//         //dd($requestBody);
+//         // Append data to the spreadsheet
+//         $response = $service->spreadsheets_values->append($spreadsheetId, $range, $requestBody, ['valueInputOption' => 'RAW']);
+//         // dd($response);
+//         // Check for errors
+//         if ($response->getError()) {
+//             Log::error('Error appending data to spreadsheet: ' . $response->getError()['message']);
+//             return back()->with("error", "Error appending data to spreadsheet. Please try again!");
+//         } else {
+//             // Data appended successfully
+//             Log::info('Data appended to spreadsheet successfully.');
+//             return redirect('thank-you')->with("success", "Thanks for reaching us, Our team will contact you soon!");
+//         }
+//     } catch (\Exception $e) {
+//         Log::error('Error submitting contact form: ' . $e->getMessage());
+//         return back()->with("error", "Please try again!");
+//     }
+// }
+
+
+
+
+
+    // public function inquirySubmit()
+    // {
+    //     // unset($_POST['_token']);
+    //     $array = $_POST;
+
+    //     // echo json_encode($_POST);
+    //     // exit;
+
+    //     $name = $_POST['name'];
+    //     $email = $_POST['email'];
+    //     $phone = $_POST['phone'];
+    //     $city = $_POST['city'];
+    //     $message = $_POST['message'];
+    //     // echo json_encode($_POST);
+    //     // exit;
+
+    //     if (Inquiry::create($array)) {
+    //         $data = "
+    //         New Inquiry Form Submitted \n
+    //         Contact Details Are Here,\n
+    //         Name - $name
+    //         Email - $email
+    //         Contact Number - $phone
+    //         City - $city
+    //         Message - $message \n
+    //         From,
+    //         Team Ksquare Energy
+    //         ";
+
+    //         Mail::raw($data, function ($message) {
+    //             $message->to(array("info@ksquareenergy.com", "dm2.intelliworkz@gmail.com"))
+    //               ->subject('Inquiry Form Submitted in Ksquare Energy');
+    //           });
+
+    //         return back()->with("success", "Your Inquiry Submitted!");
+    //     } else {
+    //         return back()->with("error", "Please try again!");
+    //     }
+    // }
+    
+    
+    
+    
+    
+    
+    //  public function inquirySubmit(Request $request)
+    // {
+    //     // Retrieve and sanitize input data
+    //     $data = $request->only(['name', 'email', 'phone', 'city', 'message']);
+
+    //     // Store inquiry in the database
+    //     if (Inquiry::create($data)) {
+    //         // Prepare email content
+    //         $emailContent = "
+    //         New Inquiry Form Submitted \n
+    //         Contact Details Are Here,\n
+    //         Name - {$data['name']}
+    //         Email - {$data['email']}
+    //         Contact Number - {$data['phone']}
+    //         City - {$data['city']}
+    //         Message - {$data['message']} \n
+    //         From,
+    //         Team Ksquare Energy
+    //         ";
+
+    //         // Send email notification
+    //         Mail::raw($emailContent, function ($message) {
+    //             $message->to(['info@ksquareenergy.com', 'dm2.intelliworkz@gmail.com'])
+    //               ->subject('Inquiry Form Submitted in Ksquare Energy');
+    //         });
+
+    //         // Send data to SheetDB
+    //         try {
+    //             $client = new Client();
+    //             $response = $client->post('https://sheetdb.io/api/v1/zhxjs9ufjtdfs', [
+    //                 'json' => [$data]
+    //             ]);
+
+    //             // Check response status
+    //             if ($response->getStatusCode() === 200 || $response->getStatusCode() === 201) {
+    //                 return back()->with('success', 'Your Inquiry Submitted!');
+    //             } else {
+    //                 Log::error('Failed to submit inquiry to SheetDB: ' . $response->getBody());
+    //                 return back()->with('error', 'Failed to submit your message. Please try again later.');
+    //             }
+    //         } catch (\Exception $e) {
+    //             Log::error('Error submitting inquiry to SheetDB: ' . $e->getMessage());
+    //             return back()->with('error', 'Failed to submit your message. Please try again later.');
+    //         }
+    //     } else {
+    //         return back()->with('error', 'Please try again!');
+    //     }
+    // }
+    
+    
+    
+    
+//-6-11-2024
+
+//      public function inquirySubmit(Request $request)
+//     {
+//         // Validation
+//         $validatedData = $request->validate([
+//             'name' => 'required|regex:/^[a-zA-Z\s]+$/|max:30',
+//             'subject' => 'required',
+//             'message' => 'required|regex:/^[a-zA-Z\s]+$/|max:100',
+//             'phone' => 'required|regex:/^[0-9]{1,10}$/|max:10',
+//             'email' => 'required|email',
+//         ], [
+//             'name.required' => 'Please enter the name.',
+//             'name.regex' => 'Please enter a valid name.',
+//             'name.max' => 'Please enter maximum 30 characters.',
+//             'subject.required' => 'Please select the subject.',
+//             'message.required' => 'Please enter the message.',
+//             'message.regex' => 'Please enter a valid message.',
+//             'message.max' => 'Please enter maximum 100 characters.',
+//             'phone.required' => 'Please enter the contact number.',
+//             'phone.regex' => 'Please enter valid contact number.',
+//             'phone.max' => 'Please enter maximum 10 digits.',
+//             'email.required' => 'Please enter the email.',
+//             'email.email' => 'Please enter a valid email address.',
+//         ]);
+
+//         // Data to be sent to SheetDB
+//         $data = [
+//             'name' => $validatedData['name'],
+//             'email' => $validatedData['email'],
+//             'phone' => $validatedData['phone'],
+//             'subject' => $validatedData['subject'],
+//             'message' => $validatedData['message'],
+//              'source' => $request->input('source')
+//         ];
+//       //dd($data);
+//         // Send data to SheetDB
+//       try {
+//               $result = Contact::create($data);
+          
+
+//             $client = new Client();
+//             $response = $client->post('https://www.ksquareenergy.cloud/web/hook/22a279e2-a907-4e4b-8b14-bf02ce7809f0', [
+//                 'json' => [$data]
+//             ]);
+// //  dd($response->getStatusCode());
+//             // Debugging response
+//             $responseData = json_decode($response->getBody(), true);
+//             //dd($responseData);
+
+//             if ($response->getStatusCode() === 200) {
+//                 return redirect('thank-you')->with('success', 'Your message has been submitted successfully!');
+//             } else {
+//                 return redirect()->back()->with('error', 'Failed to submit your message. Please try again later.');
+//             }
+//         } catch (\Exception $e) {
+//             Log::error('Error submitting contact form: ' . $e->getMessage());
+//             return redirect()->back()->with('error', 'Failed to submit your message. Please try again later.');
+//         }
+//     }
+    
+    
+}
