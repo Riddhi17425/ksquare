@@ -360,51 +360,7 @@
 									<!--<div class="cspt-contact-widget-line cspt-contact-widget-email pt-3"><a href="tel:+917969697979">079 6969 7979</a></div>-->
 									<!--<div class="cspt-contact-widget-line cspt-contact-widget-email pt-3"><a href="tel:+917227931916">+91 7227931919</a></div>-->
 								</aside>
-							</div><!-- .cspt-footer-widget -->
-
-							<!--<div class="cspt-footer-widget col-md-6 col-lg-2 mt-5">-->
-							<!--	<aside id="nav_menu-2" class="widget widget_nav_menu">-->
-							<!--		<h2 class="widget-title">Company</h2>-->
-							<!--		<div class="menu-company-container">-->
-							<!--			<ul id="menu-company" class="menu">-->
-							<!--				<li id="menu-item-8660"-->
-							<!--					class="pt-4 menu-item menu-item-type-custom menu-item-object-custom menu-item-8660">-->
-							<!--					<a href="{{route('profile')}}">Profile</a>-->
-							<!--				</li>-->
-							<!--				<li id="menu-item-8661"-->
-							<!--					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8661">-->
-							<!--					<a href="{{route('downloads')}}">Downloads</a>-->
-							<!--				</li>-->
-							<!--				<li id="menu-item-8662"-->
-							<!--					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8662">-->
-							<!--					<a href="{{route('blogs')}}">Blogs</a>-->
-							<!--				</li>-->
-							<!--				<li id="menu-item-8662"-->
-							<!--					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8662">-->
-							<!--					<a href="https://ksquare-energy-pvt-ltd.odoo.com/jobs">Careers</a>-->
-							<!--				</li>-->
-							<!--				<li id="menu-item-8663"-->
-							<!--					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8663">-->
-							<!--					<a href="{{route('contact')}}">Contact Us</a>-->
-							<!--				</li>-->
-							<!--				<li id="menu-item-8663"-->
-							<!--					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8663">-->
-							<!--					<a href="{{route('privacy')}}">Privacy Policy</a>-->
-							<!--				</li>-->
-							<!--			</ul>-->
-							<!--		</div>-->
-							<!--	</aside>-->
-							<!--</div>-->
-							<!--<div class="cspt-footer-widget col-md-6 col-lg-3 mt-5">-->
-							<!--	<aside id="nav_menu-2" class="widget widget_nav_menu">-->
-							<!--		<h2 class="widget-title">Ksquare In India</h2>-->
-							<!--		<div class="menu-company-container">-->
-							<!--			<ul id="menu-company" class="menu">-->
-							<!--				
-							<!--			</ul>-->
-							<!--		</div>-->
-							<!--	</aside>-->
-       <!--                     </div>-->
+							</div>
                             <div class="cspt-footer-widget col-md-6 col-lg-6 mt-5">
                                 <div class="row">
                                     <div class="col-md-4 p-0">
@@ -426,7 +382,7 @@
 											</li>
 											<li id="menu-item-8660"
 												class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8660">
-												<a href="https://ksquare-energy-pvt-ltd.odoo.com/jobs">Careers</a>
+												<a href="https://ksquareenergy.keka.com/careers">Careers</a>
 											</li>
 											<li id="menu-item-8660"
 												class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8660">

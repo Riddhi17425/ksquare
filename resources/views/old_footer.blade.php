@@ -66,7 +66,7 @@
 											</li>
 											<li id="menu-item-8662"
 												class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8662">
-												<a href="https://ksquare-energy-pvt-ltd.odoo.com/jobs">Careers</a>
+												<a href="https://ksquareenergy.keka.com/careers">Careers</a>
 											</li>
 											<li id="menu-item-8663"
 												class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8663">

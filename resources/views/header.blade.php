@@ -1097,7 +1097,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                     </ul>
                                                 </li>
                                                     <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
-                                                        <a href="https://ksquare-energy-pvt-ltd.odoo.com/jobs">Careers</a>
+                                                        <a href="https://ksquareenergy.keka.com/careers">Careers</a>
                                                     </li>
                                                     <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
                                                         <a href="{{route('contact')}}">Contact Us</a>
@@ -1197,7 +1197,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                     </ul>
                                                 </li>
                                                     <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
-                                                        <a href="https://ksquare-energy-pvt-ltd.odoo.com/jobs">Careers</a>
+                                                        <a href="https://ksquareenergy.keka.com/careers">Careers</a>
                                                     </li>
                                                     <li id="menu-item-17676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17676">
                                                         <a href="{{route('contact')}}">Contact Us</a>
