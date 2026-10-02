@@ -59,7 +59,7 @@ class Controller extends BaseController
         $meta = "Solar Panel Supplier Ahmedabad | Best Solar Company Gujarat";
         $desc = "Leading solar panel supplier and manufacturer of solar products in Ahmedabad, Gujarat, offering complete and turnkey solar solutions to meet your needs.";
         $link = 'https://ksquareenergy.com/';
-        $ogimage= "https://www.ksquareenergy.com/public/wp-content/uploads/sites/2/2019/01/favicon.png";
+        $ogimage= asset('public/images/profile.jpg');
         $category = Category::select('id', 'image', 'name', 'description', 'seourl')->where('deleted_at', null)->get();
         $data =  Blog::select('id', 'url', 'image', 'title')->orderBy('id','desc')->take(3)->where('is_delete','0')->get();
         return view('index', ['category' => $category, 'meta' => $meta, 'desc' => $desc, 'link' => $link,'data' => $data,'ogimage'=>$ogimage]);
