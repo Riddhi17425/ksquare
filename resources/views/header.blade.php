@@ -17,9 +17,7 @@
     <meta property="og:title" content="{{ $meta ?? '' }}" />
     <meta property="og:description" content="{!! $desc ?? '' !!}" />
     <meta property="og:url" content="{{url()->current()}}" />
-    @if($ogimage ?? '')
-    <meta property="og:image" content="{{$ogimage}}" /> 
-    @endif
+    <meta property="og:image" content="{{ !empty($ogimage) ? asset($ogimage) : asset('public/images/profile.jpg') }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="627">
 <!--  -->
