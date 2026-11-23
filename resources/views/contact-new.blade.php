@@ -1653,7 +1653,7 @@
 						<div class="row">
 							<div class="cspt-footer-copyright col-md-6">
 								<div class="cspt-footer-copyright-text-area">
-									Copyright © <?php echo date("Y"); ?> All Rights Reserve.</div>
+									Copyright &copy; <?php echo date("Y"); ?> All Rights Reserved.</div>
 							</div>
 						</div>
 					</div>
