@@ -1323,7 +1323,7 @@ class Controller extends BaseController
             ];
 
             $response = Http::asJson()->post(
-                'https://script.google.com/macros/s/AKfycbw79YiS46Ms4ALbqQaE4pmmpKHbOzoQ-EB8tfI2wPdLcr-UDOo53YBf20uf-PZgKCOVgg/exec',
+                'https://script.google.com/macros/s/AKfycbzzU6GZGJe1QKXDldvZQtJeMHFKqbJgGx9aMjoes9hKi3_lOPhfht7E0csy4bB_BPFy/exec',
                 $sheetData
             );
 
